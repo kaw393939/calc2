@@ -1,9 +1,6 @@
 """ main.py: holds the Calculator class definition"""
 class Calculator:
     """ This is the Calculator class"""
-    def __init__(self):
-        pass
-
     result = 0
 
     def get_result(self):
