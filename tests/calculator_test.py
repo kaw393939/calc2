@@ -42,5 +42,7 @@ def test_calculator_multiply_number():
 def test_calculator_divide_number():
     """Testing the divide method of the calculator"""
     calc = Calculator()
-    calc.divide_number(2,2)
+    calc.divide_number(2, 2)
     assert calc.get_result() == 1
+    calc.divide_number(2, 0)
+    assert calc.get_result() == 0

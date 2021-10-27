@@ -1,4 +1,6 @@
 """ main.py: holds the Calculator class definition"""
+
+
 class Calculator:
     """ This is the Calculator class"""
 
@@ -25,7 +27,10 @@ class Calculator:
 
     def divide_number(self, value_a, value_b):
         """divide results by number"""
-        if value_b == 0:
-            raise ValueError("Cannot divide by zero.")
-        self.result = value_a / value_b
-        return self.result
+        try:
+            self.result = value_a / value_b
+            return self.result
+        except ZeroDivisionError:
+            print("Error: Dividing by zero. Returning 0..")
+            self.result = 0
+            return self.result
