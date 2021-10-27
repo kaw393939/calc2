@@ -1,6 +1,7 @@
 """Testing the Calculator"""
 from calculator.main import Calculator
 
+
 def test_calculator_result():
     """testing calculator result is 0"""
     calc = Calculator()
@@ -9,11 +10,11 @@ def test_calculator_result():
 
 def test_calculator_add():
     """Testing the Add function of the calculator"""
-    #Arrange by instantiating the calc class
+    # Arrange by instantiating the calc class
     calc = Calculator()
-    #Act by calling the method to be tested
+    # Act by calling the method to be tested
     calc.add_number(1)
-    #Assert that the results are correct
+    # Assert that the results are correct
     assert calc.result == 1
 
 

@@ -1,13 +1,8 @@
-""" This is the increment function"""
-
-
-def inc(x_value):
-    """ Increment Function adds one to the x_value"""
-    return x_value + 1
-
-
 class Calculator:
     """ This is the Calculator class"""
+
+    def __init__(self):
+        pass
 
     result = 0
 
@@ -32,5 +27,7 @@ class Calculator:
 
     def divide_number(self, value_a):
         """divide results by number"""
+        if value_a == 0:
+            raise ValueError("Cannot divide by zero.")
         self.result = self.result / value_a
         return self.result
