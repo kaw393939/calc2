@@ -35,14 +35,12 @@ def test_calculator_subtract_number():
 def test_calculator_multiply_number():
     """Testing the multiply method of the calculator"""
     calc = Calculator()
-    calc.add_number(2)
-    calc.multiply_number(2)
+    calc.multiply_number(2,2)
     assert calc.get_result() == 4
 
 
 def test_calculator_divide_number():
     """Testing the divide method of the calculator"""
     calc = Calculator()
-    calc.add_number(2)
-    calc.divide_number(2)
+    calc.divide_number(2,2)
     assert calc.get_result() == 1
