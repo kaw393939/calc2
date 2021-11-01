@@ -3,7 +3,7 @@ from calculator.calculator import Calculator
 
 def test_calculator_add():
     """Testing the Add function of the calculator"""
-    assert Calculator.add_number(1.2) == 3
+    assert Calculator.add_number(1,2) == 3
 
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
