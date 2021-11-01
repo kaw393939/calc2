@@ -19,3 +19,8 @@ class Calculator:
         """ multiply two numbers and store the result"""
         self.result = value_a * value_b
         return self.result
+
+    def division_numbers(self, value_a, value_b):
+        """ multiply two numbers and store the result"""
+        self.result = round((float(value_a) / float(value_b)), 9)
+        return self.result
