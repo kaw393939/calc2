@@ -1,5 +1,6 @@
 """Testing the Calculator"""
-import unittest
+import pytest
+
 from calculator.main import Calculator
 
 def test_calculator_result():
@@ -34,13 +35,19 @@ def test_calculator_multiply():
 
 def test_calculator_division():
     """ Testing division of two numbers"""
-    try:
-        calc = Calculator()
-        result=calc.divide_numbers(2,1)
-        assert result == 2
-    except ZeroDivisionError:
-        calc=Calculator()
-        result = calc.divide_numbers(1,0)
-        assert result == 0
-if __name__ == '__main__':
-    unittest.main()
+    # Arrange
+    value_a = 1
+    value_b = 1
+    # Act
+    result = Calculator.divide_numbers(value_a, value_b)
+    # Assert
+    assert result == 1
+
+def test_calculator_division_exception():
+    """ Testing division exception for division by zero"""
+    # Arrange
+    value_a = 1
+    value_b = 0
+    # Act
+    with pytest.raises(ZeroDivisionError):
+        Calculator.divide_numbers(value_a, value_b)
