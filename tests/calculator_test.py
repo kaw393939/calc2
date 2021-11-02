@@ -4,21 +4,49 @@ from calculator.calculator import Calculator
 
 def test_calculator_add():
     """Testing the Add function of the calculator"""
-    assert Calculator.add_number(1,2) == 3
+    # Arrange
+    value_a = 1
+    value_b = 2
+    # Act
+    result = Calculator.add_number(value_a,value_b)
+    # Assert
+    assert result == 3
 
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
-    assert Calculator.subtract_number(1, 2) == -1
+    # Arrange
+    value_a = 1
+    value_b = 2
+    # Act
+    result = Calculator.subtract_number(value_a, value_b)
+    # Assert
+    assert result == -1
 
 def test_calculator_multiply():
     """ Testing multiplication of two numbers"""
-    assert Calculator.multiply_numbers(1,2) == 2
+    # Arrange
+    value_a = 1
+    value_b = 2
+    # Act
+    result = Calculator.multiply_numbers(value_a, value_b)
+    # Assert
+    assert result == 2
 
 def test_calculator_division():
     """ Testing division of two numbers"""
-    assert Calculator.divide_numbers(1, 1) == 1
+    # Arrange
+    value_a = 1
+    value_b = 1
+    # Act
+    result = Calculator.divide_numbers(value_a, value_b)
+    # Assert
+    assert result == 1
 
 def test_calculator_division_exception():
     """ Testing division exception for division by zero"""
+    # Arrange
+    value_a = 1
+    value_b = 0
+    # Act
     with pytest.raises(ZeroDivisionError):
-        Calculator.divide_numbers(1,0)
+        Calculator.divide_numbers(value_a,value_b)
