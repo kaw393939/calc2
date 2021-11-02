@@ -34,18 +34,20 @@ def test_calculator_multiply():
 def test_calculator_division():
     """ Testing division of two numbers"""
     # Arrange
+    calc = Calculator()
     value_a = 1
     value_b = 1
     # Act
-    result = Calculator.divide_numbers(value_a, value_b)
+    result = calc.division_numbers(value_a, value_b)
     # Assert
     assert result == 1
 
 def test_calculator_division_exception():
     """ Testing division exception for division by zero"""
     # Arrange
+    calc = Calculator()
     value_a = 1
     value_b = 0
     # Act
     with pytest.raises(ZeroDivisionError):
-        Calculator.divide_numbers(value_a, value_b)
+        calc.division_numbers(value_a, value_b)
