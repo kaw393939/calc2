@@ -1,4 +1,5 @@
 """Testing the Calculator"""
+import unittest
 from calculator.main import Calculator
 
 def test_calculator_result():
@@ -30,3 +31,15 @@ def test_calculator_multiply():
     calc = Calculator()
     result  = calc.multiply_numbers(1,2)
     assert result == 2
+def test_calculator_division():
+    """ Testing division of two numbers"""
+    try:
+        calc = Calculator()
+        result=calc.divide_numbers(2,1)
+        assert result == 2
+    except ZeroDivisionError:
+        calc=Calculator()
+        result = calc.divide_numbers(1,0)
+        assert result == 0
+if __name__ == '__main__':
+    unittest.main()
