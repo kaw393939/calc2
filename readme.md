@@ -1,7 +1,7 @@
 # Calculator Project Setup 
 [![Build Status](https://app.travis-ci.com/Rajesh007x/calc2.svg?branch=main)](https://app.travis-ci.com/Rajesh007x/calc2)
 
-Below are few steps before running
+Below are few steps before running :-
 
 Run Pip Install
 pip install -r requirements.txt
