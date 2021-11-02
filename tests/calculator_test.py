@@ -44,6 +44,6 @@ class MyTestCase(unittest.TestCase):
         """Testing the divide method of the calculator when dividing by zero"""
         with self.assertRaises(ZeroDivisionError):
             calc = Calculator()
-            calc.division_numbers(4,0)
+            calc.division_numbers(2,0)
 if __name__ == '__main__':
     unittest.main()
