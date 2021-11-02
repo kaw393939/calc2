@@ -14,3 +14,5 @@ pytest  --pylint --cov
 setup.py is a config file for pytest
 
 Added test case to get 100% coverage.
+
+[![Build Status](https://app.travis-ci.com/Rajesh007x/calc2.svg?branch=main)](https://app.travis-ci.com/Rajesh007x/calc2)
