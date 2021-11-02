@@ -1,4 +1,5 @@
 """Testing the Calculator"""
+import unittest
 from calculator.main import Calculator
 
 def test_calculator_result():
@@ -36,3 +37,13 @@ def test_calculator_division():
     calc = Calculator()
     result = calc.division_numbers(2,2)
     assert result == 1
+
+class MyTestCase(unittest.TestCase):
+    """A test case is the individual unit of testing.unittest provides a base class"""
+    def test_calculator_divide_by_zero(self):
+        """Testing the divide method of the calculator when dividing by zero"""
+        with self.assertRaises(ZeroDivisionError):
+            calc = Calculator()
+            calc.division_numbers(4,0)
+if __name__ == '__main__':
+    unittest.main()
