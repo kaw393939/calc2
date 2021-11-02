@@ -19,3 +19,8 @@ class Calculator:
         """ multiply two numbers and store the result"""
         self.result = value_a * value_b
         return self.result
+
+    @staticmethod
+    def division_numbers(value_a, value_b):
+        """ division two numbers and store the result"""
+        return value_a / value_b
