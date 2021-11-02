@@ -1,5 +1,5 @@
 """Testing the Calculator"""
-
+import unittest
 from calculator.main import Calculator
 
 def test_calculator_result():
@@ -42,3 +42,5 @@ def test_calculator_division():
         calc=Calculator()
         result = calc.divide_numbers(1,0)
         assert result == 0
+if __name__ == '__main__':
+    unittest.main()
