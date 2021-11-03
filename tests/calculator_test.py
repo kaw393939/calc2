@@ -7,7 +7,7 @@ from calculator.calculator import Calculator
 @pytest.fixture
 def clear_history_test():
     """Clearing the history array"""
-    Calculator.clear_history()
+    return Calculator.clear_history()
 
 def test_calculator_add_first(clear_history_test):
     """Testing the Add function of the calculator"""

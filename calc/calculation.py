@@ -1,4 +1,4 @@
-"""This is going to be the Calculator object"""
+"""This is going to be the Calculation object"""
 
 class Calculation:
     """Initializing variables"""
