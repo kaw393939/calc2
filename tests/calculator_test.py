@@ -2,7 +2,9 @@
 import pytest
 from calculator.calculator import Calculator
 
-# This is how you define a function that will run each time yuo pass it to a test, it is called a fixture
+# This is how you define a function that will run
+# each time you pass it to a test, it is called a fixture
+"""Using fixture to call a function on repeat"""
 @pytest.fixture
 def clear_history():
     Calculator.clear_history()
@@ -20,22 +22,26 @@ def test_calculator_add_third(clear_history):
     assert Calculator.add_number(3, 4) == 7
 
 def test_calculator_history_count(clear_history):
+    """Testing the count of results history array of the calculator"""
     assert Calculator.count_history() == 0
 
 def test_calculator_clear_history():
+    """Testing the clearing of the results history array of the calculator"""
     assert Calculator.clear_history() == 0
 
 def test_calc_complete(clear_history):
-    #The calculator is holding static properties and methods i.e history property there is only one history property
+    #The calculator is holding static properties and methods
+    # i.e history property there is only one history property
     #Addition calculation objects to the history
     assert Calculator.add_number(1,2) == 3
     assert Calculator.add_number(2,3) == 5
     assert Calculator.add_number(3,4) == 7
     assert Calculator.count_history() == 3
-    #The numbers in the [] refers to the calculation obj ect in that position and you can call the method on the object
-    assert Calculator.history[0].getResult() == 3
-    assert Calculator.history[1].getResult() == 5
-    assert Calculator.history[2].getResult() == 7
+    #The numbers in the [] refers to the calculation object
+    # in that position and you can call the method on the object
+    assert Calculator.history[0].get_Result() == 3
+    assert Calculator.history[1].get_Result() == 5
+    assert Calculator.history[2].get_Result() == 7
 
 def test_calculator_subtract(clear_history):
     """Testing the subtract method of the calculator"""
