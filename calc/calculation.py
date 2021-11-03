@@ -7,7 +7,7 @@ class Calculation:
         self.value_b = value_b
 
 # Class Factory Method
-    """Using class method to create objects of the individual operations methods"""
     @classmethod
     def create(cls, value_a, value_b):
+        """Using class method to create objects of all individual operations"""
         return cls(value_a,value_b)

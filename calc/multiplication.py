@@ -2,8 +2,7 @@
 
 from calc.calculation import Calculation
 
-"""This is multiplication operation class"""
 class Multiplication(Calculation):
-    """Multiplying two numbers"""
-    def get_Result(self):
+    def get_result(self):
+        """This is multiplication class"""
         return self.value_a * self.value_b

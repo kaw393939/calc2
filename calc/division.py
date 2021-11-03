@@ -2,8 +2,7 @@
 
 from calc.calculation import Calculation
 
-"""This is division operation class"""
 class Division(Calculation):
-    """Dividing two numbers"""
-    def get_Result(self):
+    def get_result(self):
+        """This is division class"""
         return self.value_a / self.value_b

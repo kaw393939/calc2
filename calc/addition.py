@@ -2,8 +2,7 @@
 
 from calc.calculation import Calculation
 
-"""This is addition operation class"""
 class Addition(Calculation):
-    """Adding two numbers"""
-    def get_Result(self):
+    def get_result(self):
+        """This is addition class"""
         return self.value_a + self.value_b

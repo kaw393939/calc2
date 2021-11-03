@@ -18,7 +18,7 @@ class   Calculator:
     def get_last_calculation_result():
         """Getting the latest result from history array"""
         # -1 index gets the last item added to history
-        return Calculator.history[-1].get_Result()
+        return Calculator.history[-1].get_result()
 
     @staticmethod
     def get_last_calculation_object():
