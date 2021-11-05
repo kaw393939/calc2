@@ -1,5 +1,5 @@
 # Calculator Project Setup
-[![Build Status](https://app.travis-ci.com/AnishaCh/calc2.svg?branch=main)](https://app.travis-ci.com/AnishaCh/calc2)
+[![Build Status](https://app.travis-ci.com/AnishaCh/calc2.svg?branch=calcpart4)](https://app.travis-ci.com/AnishaCh/calc2)
 Run Pip Install
 pip install -r requirements.txt
 
