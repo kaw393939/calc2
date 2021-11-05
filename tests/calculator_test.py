@@ -1,48 +1,42 @@
 """Testing the Calculator"""
-from calculator.main import Calculator
+from calc.calculator import Calculator
+from calc.operations.addition import Addition
+from calc.operations.subtraction import Subtraction
+from calc.operations.multiplication import Multiplication
+from calc.operations.division import Division
 
 
-def test_calculator_result():
+def test_calculator_history():
     """testing calculator result is 0"""
-    calc = Calculator()
-    assert calc.get_result() == 0
+    # Arrange
+    previous_length = len(Calculator.history)
+    Calculator.add_number(1, 2)
+    assert len(Calculator.history) == previous_length+1
 
 
-def test_calculator_get_result():
-    """Testing the Get result method of the calculator"""
-    calc = Calculator()
-    calc.add_number(1)
-    assert calc.get_result() == 1
-
-
-def test_calculator_add_number():
+def test_calculator_add_static():
     """Testing the Add function of the calculator"""
-    # Arrange by instantiating the calc class
-    calc = Calculator()
-    # Act by calling the method to be tested
-    calc.add_number(1)
-    # Assert that the results are correct
-    assert calc.get_result() == 1
+    Calculator.add_number(1, 1)
+    last_operation = Calculator.get_last_operation()
+    assert isinstance(last_operation, Addition)
 
 
-def test_calculator_subtract_number():
+def test_calculator_subtract_static():
     """Testing the subtract method of the calculator"""
-    calc = Calculator()
-    calc.subtract_number(1)
-    assert calc.get_result() == -1
+    Calculator.subtract_number(1, 1)
+    last_operation = Calculator.get_last_operation()
+    assert isinstance(last_operation, Subtraction)
 
 
-def test_calculator_multiply_number():
+def test_calculator_multiply_static():
     """Testing the multiply method of the calculator"""
-    calc = Calculator()
-    calc.multiply_number(2,2)
-    assert calc.get_result() == 4
+    Calculator.multiply_number(1, 1)
+    last_operation = Calculator.get_last_operation()
+    assert isinstance(last_operation, Multiplication)
 
 
-def test_calculator_divide_number():
+def test_calculator_divide_static():
     """Testing the divide method of the calculator"""
-    calc = Calculator()
-    calc.divide_number(2, 2)
-    assert calc.get_result() == 1
-    calc.divide_number(2, 0)
-    assert calc.get_result() == 0
+    Calculator.divide_number(1, 1)
+    last_operation = Calculator.get_last_operation()
+    assert isinstance(last_operation, Division)
