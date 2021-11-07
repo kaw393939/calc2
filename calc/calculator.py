@@ -2,8 +2,6 @@
 class Calculator:
     """ This is the Calculator class"""
 
-    history = []
-
     @staticmethod
     def add_number(value_a, value_b):
         """ adds number to result"""
