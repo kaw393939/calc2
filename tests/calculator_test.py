@@ -1,18 +1,28 @@
 """Testing the Calculator"""
+# disabling:
+# C0304: Trailing newlines (trailing-newlines)
+# pylint: disable=C0304
+import pytest
 from calculator.main import Calculator
+
 
 def test_calculator_result():
     """testing calculator result is 0"""
     calc = Calculator()
     assert calc.result == 0
 
+def test_zero_division():
+    """Testing the division function of the calculator"""
+    calc = Calculator()
+    with pytest.raises(ZeroDivisionError):
+        calc.division_numbers(1,0)
 def test_calculator_add():
     """Testing the Add function of the calculator"""
-    #Arrange by instantiating the calc class
+    #AAA-Arrange by instantiating the calc class
     calc = Calculator()
-    #Act by calling the method to be tested
+    #AAA-Act by calling the method to be tested
     calc.add_number(4)
-    #Assert that the results are correct
+    #AAA-Assert that the results are correct
     assert calc.result == 4
 
 def test_calculator_get_result():
@@ -30,8 +40,10 @@ def test_calculator_multiply():
     calc = Calculator()
     result  = calc.multiply_numbers(1,2)
     assert result == 2
-def test_calculator_divide():
+def test_calculator_division():
     """ tests division of two numbers"""
     calc = Calculator()
-    result  = calc.divide_numbers(2,1)
+    result = calc.division_numbers(2,1)
     assert result == 2
+
+
