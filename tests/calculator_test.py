@@ -11,12 +11,12 @@ def clear_history_fixture():
 def test_calculator_add_static(clear_history_fixture):
     """testing that our calculator has a static method for addition"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculator.add_number(1.0,2.0) == 3.0
+    assert Calculator.add_numbers(1.0,2.0) == 3.0
 
 def test_calculator_subtract_static(clear_history_fixture):
     """Testing the subtract method of the calc"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculator.subtract_number(1.0,2.0) == -1.0
+    assert Calculator.subtract_numbers(1.0,2.0) == -3.0
 
 def test_calculator_multiply_static(clear_history_fixture):
     """Testing the multiplication method of the calc"""
