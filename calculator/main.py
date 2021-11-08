@@ -15,10 +15,12 @@ class Calculator:
         """ subtract number from result"""
         self.result = self.result - value_a
         return self.result
+
     def multiply_numbers(self, value_a, value_b):
         """ multiply two numbers and store the result"""
         self.result = value_a * value_b
         return self.result
+
     @staticmethod
     def divide_numbers(value_a, value_b):
         """ divide two numbers and store the result"""
