@@ -1,53 +1,29 @@
 """Testing the Calculator"""
 import pytest
-from calculator.main import Calculator
+from calc.calculator import Calculator
+from calc.history.calculations import Calculations
+@pytest.fixture
+def clear_history_fixture():
+    """define a function that will run each time you pass it to a test, it is called a fixture"""
+    # pylint: disable=redefined-outer-name
+    Calculations.clear_history()
+#You have to add the fixture function as a parameter to the test that you want to use it with
+def test_calculator_add_static(clear_history_fixture):
+    """testing that our calculator has a static method for addition"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.add_numbers(1.0,2.0) == 3.0
 
-def test_calculator_result():
-    """testing calculator result is 0"""
-    calc = Calculator()
-    assert calc.result == 0
+def test_calculator_subtract_static(clear_history_fixture):
+    """Testing the subtract method of the calc"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.subtract_numbers(1.0,2.0) == -3.0
 
-def test_calculator_add():
-    """Testing the Add function of the calculator"""
-    #Arrange by instantiating the calc class
-    calc = Calculator()
-    #Act by calling the method to be tested
-    calc.add_number(4)
-    #Assert that the results are correct
-    assert calc.result == 4
+def test_calculator_multiply_static(clear_history_fixture):
+    """Testing the multiplication method of the calc"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.multiply_numbers(1.0,2.0) == 2.0
 
-def test_calculator_get_result():
-    """Testing the Get result method of the calculator"""
-    calc = Calculator()
-    assert calc.get_result() == 0
-
-def test_calculator_subtract():
-    """Testing the subtract method of the calculator"""
-    calc = Calculator()
-    calc.subtract_number(1)
-    assert calc.get_result() == -1
-def test_calculator_multiply():
-    """ tests multiplication of two numbers"""
-    calc = Calculator()
-    result  = calc.multiply_numbers(1,2)
-    assert result == 2
-def test_calculator_division():
-    """ Testing division of two numbers"""
-    # Arrange
-    calc = Calculator()
-    value_a = 1
-    value_b = 1
-    # Act
-    result = calc.division_numbers(value_a, value_b)
-    # Assert
-    assert result == 1
-
-def test_calculator_division_exception():
-    """ Testing division exception for division by zero"""
-    # Arrange
-    calc = Calculator()
-    value_a = 1
-    value_b = 0
-    # Act
-    with pytest.raises(ZeroDivisionError):
-        calc.division_numbers(value_a, value_b)
+def test_calculator_divide_static(clear_history_fixture):
+    """Testing the division method of the calc"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.divide_numbers(1.0,2.0) == 0.5
