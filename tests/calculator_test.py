@@ -13,7 +13,7 @@ def test_calculator_add():
     # Arrange by instantiating the calc class
     calc = Calculator()
     # Act by calling the method to be tested
-    calc.add_number(4)
+    calc.add(4)
     # Assert that the results are correct
     assert calc.result == 4
 
@@ -27,14 +27,14 @@ def test_calculator_get_result():
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
     calc = Calculator()
-    calc.subtract_number(1)
+    calc.subtract(1)
     assert calc.get_result() == -1
 
 
 def test_calculator_multiply():
     """ tests multiplication of two numbers"""
     calc = Calculator()
-    result = calc.multiply_numbers(1, 2)
+    result = calc.multiply(1, 2)
     assert result == 2
 
 
@@ -42,6 +42,6 @@ def test_divison():
     """Calls the calculator class from main.py"""
     calc = Calculator()
     # Calls the division function from main.py and inputs static number.
-    result = calc.division_number(6, 3)
+    result = calc.division(6, 3)
     # Assert that the results are correct
     assert result == 2
