@@ -1,79 +1,28 @@
-""" main.py: holds the Calculator class definition"""
-from calc.operations.addition import Addition
-from calc.operations.subtraction import Subtraction
-from calc.operations.multiplication import Multiplication
-from calc.operations.division import Division
+""" This is the increment function"""
+from calc.history.calculations import Calculations
 
-
+#the calculator class just contains the methods to calculate
 class Calculator:
     """ This is the Calculator class"""
-
-    history = []
-
+    #the calculator class just calls methods on Calculations class
     @staticmethod
-    def add_calculation_to_history(calculation):
-        """adds a calculation to the end of the history"""
-        Calculator.history.append(calculation)
-
+    def get_last_result_value():
+        """ This is the gets the result of the calculation"""
+        # I made this method so that I don't have more than one action per function
+        return Calculations.get_last_calculation_result_value()
     @staticmethod
-    def get_result_of_last_calculation():
-        """returns the results of the last item in the calculator history"""
-        return Calculator.history[-1].get_result()
-
+    #tuple allows me to pass in as many values as a I want
+    def add_numbers(tuple_values: tuple):
+        """ adds list of numbers"""
+        Calculations.add_addition_calculation(tuple_values)
+        return True
     @staticmethod
-    def get_last_operation():
-        """grabs the latest operation from the history"""
-        return Calculator.history[-1]
-
+    def subtract_numbers(tuple_values: tuple):
+        """ subtract a list of numbers from result"""
+        Calculations.add_subtraction_calculation(tuple_values)
+        return True
     @staticmethod
-    def get_result_of_first_calculation():
-        """returns the results of the first item in the calculator history"""
-        return Calculator.history[0].get_result()
-
-    @staticmethod
-    def get_first_operation():
-        """grabs the first operation from the history"""
-        return Calculator.history[0]
-
-    @staticmethod
-    def get_history_length():
-        """gets the length of the calculator history"""
-        return len(Calculator.history)
-
-    @staticmethod
-    def clear_history():
-        """clears the calculator history"""
-        Calculator.history = []
-
-    @staticmethod
-    def remove_from_history(index):
-        """remove an item from the calculator's history via index"""
-        Calculator.history.pop(index)
-
-    @staticmethod
-    def add_number(value_a, value_b):
-        """adds value_a and value_b"""
-        addition = Addition.create(value_a, value_b)
-        Calculator.add_calculation_to_history(addition)
-        return addition.get_result()
-
-    @staticmethod
-    def subtract_number(value_a, value_b):
-        """subtract value_b from value_a"""
-        subtraction = Subtraction.create(value_a, value_b)
-        Calculator.add_calculation_to_history(subtraction)
-        return subtraction.get_result()
-
-    @staticmethod
-    def multiply_number(value_a, value_b):
-        """multiply value_a and value_b"""
-        multiplication = Multiplication.create(value_a, value_b)
-        Calculator.add_calculation_to_history(multiplication)
-        return multiplication.get_result()
-
-    @staticmethod
-    def divide_number(value_a, value_b):
-        """divide value_a by value_b"""
-        division = Division.create(value_a, value_b)
-        Calculator.add_calculation_to_history(division)
-        return division.get_result()
+    def multiply_numbers(tuple_values: tuple):
+        """ multiplication number from result"""
+        Calculations.add_multiplication_calculation(tuple_values)
+        return True
