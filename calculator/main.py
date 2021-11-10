@@ -32,5 +32,4 @@ class Calculator:
         try:
             self.result = div_1 / div_2
         except ZeroDivisionError:
-            print("Cannot divide by zero")
             return self.result

@@ -55,4 +55,4 @@ def test_division_zero():
     # Calls the division function from main.py and inputs static number.
     result = calc.division(6, 0)
     # Assert that the results are correct
-    assert result == ZeroDivisionError
+    assert 0 == ZeroDivisionError
