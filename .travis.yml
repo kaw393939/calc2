@@ -10,4 +10,6 @@ script:
 branches:
   only:
     - main
+    - Refactor
+    - calc_part2
     - development
