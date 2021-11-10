@@ -30,4 +30,5 @@ class Calculator:
         """ Division number from result"""
         calculation = Division(args)
         Calculations.add_calculation(calculation)
+
         return calculation.get_result()
