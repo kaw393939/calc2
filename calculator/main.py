@@ -27,5 +27,9 @@ class Calculator:
 
     def division(self, div_1, div_2):
         """ Dividing Numbers"""
+        div_1 = float(div_1)
+        div_2 = float(div_2)
+        if div_1 == 0 or div_2 == 0:
+            raise ZeroDivisionError("Cannot divide by 0!")
         self.result = div_1 / div_2
         return self.result
