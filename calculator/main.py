@@ -29,7 +29,5 @@ class Calculator:
         """ Dividing Numbers"""
         div_1 = float(div_1)
         div_2 = float(div_2)
-        try:
-            self.result = div_1 / div_2
-        except ZeroDivisionError:
-            return self.result
+        self.result = div_1 / div_2
+        return self.result
