@@ -19,8 +19,8 @@ class Calculations:
     @staticmethod
     def get_last_calculation_result():
         """ get the last calculation from history"""
-        calculation = Calculations.get_last_calculation_object()
-        return calculation.get_result()
+        return Calculations.get_last_calculation_object().get_result()
+        #return calculation.get_result()
     @staticmethod
     def get_first_calculation():
         """ get the first calculation from history"""
