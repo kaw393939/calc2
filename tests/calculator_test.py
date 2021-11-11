@@ -47,12 +47,3 @@ def test_division():
     result = calc.division(6, 3)
     # Assert that the results are correct
     assert result == 2
-
-
-def test_division_zero():
-    """Calls the calculator class from main.py"""
-    calc = Calculator()
-    # Calls the division function from main.py and inputs static number.
-    result = calc.division(6, 0)
-    # Assert that the results are correct
-    assert result == ZeroDivisionError
