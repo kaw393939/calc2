@@ -13,9 +13,14 @@ class Calculations:
         """ get the length of history list"""
         return len(Calculations.history)
     @staticmethod
-    def get_last_calculation():
+    def get_last_calculation_object():
         """ get the latest calculation from history"""
         return Calculations.history[-1]
+    @staticmethod
+    def get_last_calculation_result():
+        """ get the last calculation from history"""
+        calculation = Calculations.get_last_calculation_object()
+        return calculation.get_result()
     @staticmethod
     def get_first_calculation():
         """ get the first calculation from history"""

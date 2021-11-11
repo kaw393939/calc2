@@ -8,27 +8,26 @@ from calc.calculations.division import Division
 class Calculator:
     """ This is the Calculator class"""
     @staticmethod
-    def add_numbers(*args):
+    def get_last_calculation_from_result():
+        """ Last value from calculation"""
+        return Calculations.get_last_calculation_result()
+    @staticmethod
+    def add_numbers( values: tuple):
         """ adds list of numbers"""
-        calculation = Addition(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result()
+        Calculations.add_calculation(Addition(values))
+        return True
     @staticmethod
-    def subtract_numbers(*args):
+    def subtract_numbers( values: tuple):
         """ subtract a list of numbers from result"""
-        calculation = Subtraction(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result()
+        Calculations.add_calculation(Subtraction(values))
+        return True
     @staticmethod
-    def multiply_numbers(*args):
+    def multiply_numbers( values: tuple):
         """ multiplication number from result"""
-        calculation = Multiplication(args)
-        Calculations.add_calculation(calculation)
-        return calculation.get_result()
+        Calculations.add_calculation(Multiplication(values))
+        return True
     @staticmethod
-    def divide_numbers(*args):
+    def divide_numbers( values: tuple):
         """ Division number from result"""
-        calculation = Division(args)
-        Calculations.add_calculation(calculation)
-
-        return calculation.get_result()
+        Calculations.add_calculation(Division(values))
+        return True

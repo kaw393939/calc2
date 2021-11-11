@@ -8,4 +8,4 @@ def test_calculation_subtraction():
     subtraction = Subtraction(mynumbers)
     #Act
     #Assert
-    assert subtraction.get_result() == -17.5
+    assert subtraction.get_result() == 2.5
