@@ -9,26 +9,30 @@ class Calculator:
     history = []
     @staticmethod
     def get_results_of_first_calculation_added_to_history():
-        return Calculator.history[0].getResult()
+        """ This is the get first result class"""
+        return Calculator.history[0].get_result()
 
     @staticmethod
     def clear_history():
+        """ This is the clear result class"""
         Calculator.history.clear()
         return True
 
     @staticmethod
     def history_count():
+        """ This is the history count class"""
         return len(Calculator.history)
 
     @staticmethod
     def add_calculation_to_history(calculation):
+        """ This is the calculation history class"""
         Calculator.history.append(calculation)
         return True
 
     @staticmethod
     def get_results_of_last_calculation_added_to_history():
-        #-1 gets last item added to list
-        return Calculator.history[-1].getResult()
+        """-1 gets last item added to list"""
+        return Calculator.history[-1].get_result()
     @staticmethod
     #this is an example of a calling method
     def add_number(value_a, value_b):
