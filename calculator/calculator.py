@@ -3,6 +3,7 @@
 from calc.additon import Addition
 from calc.subtraction import Subtraction
 from calc.multiplication import Multiplication
+from calc.division import Division
 
 class Calculator:
     """ This is the Calculator class"""
@@ -56,4 +57,12 @@ class Calculator:
         # create a multiplication object using the factory we created on the calculation class
         multiplication = Multiplication.create(value_a, value_b)
         Calculator.add_calculation_to_history(multiplication)
+        return Calculator.get_results_of_last_calculation_added_to_history()
+    @staticmethod
+    #this is an example of a calling method
+    def divide_numbers(value_a, value_b):
+        """ division two numbers and store the result"""
+        # create a division object using the factory we created on the calculation class
+        division = Division.create(value_a, value_b)
+        Calculator.add_calculation_to_history(division)
         return Calculator.get_results_of_last_calculation_added_to_history()
