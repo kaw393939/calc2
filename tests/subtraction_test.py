@@ -9,3 +9,15 @@ def test_calculation_subtraction():
     #Act
     #Assert
     assert subtraction.get_result() == -3
+    #Arrange
+    mynumbers = (2.0,2.0)
+    subtraction = Subtraction(mynumbers)
+    #Act
+    #Assert
+    assert subtraction.get_result() == 0
+    #Arrange
+    mynumbers = (5.0,2.0)
+    subtraction = Subtraction(mynumbers)
+    #Act
+    #Assert
+    assert subtraction.get_result() == 3
