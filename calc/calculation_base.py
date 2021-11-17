@@ -11,3 +11,4 @@ class Calculation: # pylint: disable=too-few-public-methods
     def create(cls, value_a, value_b):
         """ Clear function"""
         return cls(value_a,value_b)
+

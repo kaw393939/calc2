@@ -14,7 +14,7 @@ def fixture_clear_history():
 def test_calculator_add(clear_history):
     """Testing the Add function of the calculator"""
     # pylint: disable=unused-argument
-    assert Calculator.add_number(1,2) == 3
+    assert Calculator.add_number(1, 2) == 3
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.add_number(4, 2) == 6
@@ -25,7 +25,7 @@ def test_calculator_add(clear_history):
 def test_clear_history(clear_history):
     """Funtion to test clear history"""
     # pylint: disable=unused-argument
-    assert Calculator.add_number(1,2) == 3
+    assert Calculator.add_number(1, 2) == 3
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.add_number(4, 2) == 6
@@ -63,14 +63,14 @@ def test_calculator_subtract(clear_history):
 def test_calculator_multiply(clear_history):
     """ tests multiplication of two numbers"""
     # pylint: disable=unused-argument
-    assert Calculator.multiply_numbers(1,2) == 2
+    assert Calculator.multiply_numbers(1, 2) == 2
 
 def test_calculator_divide1(clear_history):
     """ tests division of two numbers"""
     # pylint: disable=unused-argument
-    assert Calculator.divide_numbers(4,2) == 2
+    assert Calculator.divide_numbers(4, 2) == 2
 
 def test_calculator_divide2(clear_history):
     """ tests division of two numbers"""
     # pylint: disable=unused-argument
-    assert Calculator.divide_numbers(1,0) == "Error"
+    assert Calculator.divide_numbers(1, 0) == "Error"
