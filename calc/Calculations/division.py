@@ -1,7 +1,5 @@
 """Divide Class"""
-# pylint: skip-file
 from calc.Calculations.calculation_base import Calculation
-
 
 class Divide(Calculation):
     """divide calculation object"""
