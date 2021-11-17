@@ -14,6 +14,11 @@ class Calculator:
         return Calculator.history[0].get_result()
 
     @staticmethod
+    def get_history():
+        """ This is the get history class"""
+        return Calculator.history
+
+    @staticmethod
     def clear_history():
         """ This is the clear result class"""
         Calculator.history.clear()
@@ -34,6 +39,7 @@ class Calculator:
     def get_results_of_last_calculation_added_to_history():
         """-1 gets last item added to list"""
         return Calculator.history[-1].get_result()
+
     @staticmethod
     #this is an example of a calling method
     def add_number(value_a, value_b):
@@ -42,6 +48,7 @@ class Calculator:
         addition = Addition.create(value_a, value_b)
         Calculator.add_calculation_to_history(addition)
         return Calculator.get_results_of_last_calculation_added_to_history()
+
     @staticmethod
     #this is an example of a calling method
     def subtract_number(value_a, value_b):
@@ -50,6 +57,7 @@ class Calculator:
         subtraction = Subtraction.create(value_a, value_b)
         Calculator.add_calculation_to_history(subtraction)
         return Calculator.get_results_of_last_calculation_added_to_history()
+
     @staticmethod
     #this is an example of a calling method
     def multiply_numbers(value_a, value_b):
@@ -58,6 +66,7 @@ class Calculator:
         multiplication = Multiplication.create(value_a, value_b)
         Calculator.add_calculation_to_history(multiplication)
         return Calculator.get_results_of_last_calculation_added_to_history()
+
     @staticmethod
     #this is an example of a calling method
     def divide_numbers(value_a, value_b):
