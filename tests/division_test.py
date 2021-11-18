@@ -1,10 +1,11 @@
 """Testing Division"""
-# pylint: skip-file
-from calc.Calculations.division import Divide
 
-def test_calculation_divide():
-    """testing that our calculator has a static method for division"""
+from calc.Calculations.division import Divide
+def test_calculation_division():
+    """testing that our calculator has a static method for addition"""
     #Arrange
-    mynumbers = (4.0, 2.0)
-    divide = Divide(mynumbers)
-    assert divide.get_result() == 2
+    values = (100.0,10.0)
+    division = Divide(values)
+    #Act
+    #Assert
+    assert division.get_output()== 0.1

@@ -1,4 +1,6 @@
 """Calculation Class"""
+
+
 class Calculation:
     """ calculation abstract base class"""
     # pylint: disable=too-few-public-methods
@@ -13,5 +15,3 @@ class Calculation:
         for item in values:
             list_values_float.append(float(item))
         return list_values_float
-
-
