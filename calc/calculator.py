@@ -11,23 +11,27 @@ class Calculator:
     def get_last_calculation_from_result():
         """ Last value from calculation"""
         return Calculations.get_last_calculation_result()
+
     @staticmethod
-    def add_numbers( values: tuple):
+    def __add__(values: tuple):
         """ adds list of numbers"""
-        Calculations.add_calculation(Addition(values))
+        Calculations.add_calculation_to_history(Addition.create(values))
         return True
+
     @staticmethod
-    def subtract_numbers( values: tuple):
+    def __sub__(values: tuple):
         """ subtract a list of numbers from result"""
-        Calculations.add_calculation(Subtraction(values))
+        Calculations.add_calculation_to_history(Subtraction.create(values))
         return True
+
     @staticmethod
-    def multiply_numbers( values: tuple):
+    def __mul__(values: tuple):
         """ multiplication number from result"""
-        Calculations.add_calculation(Multiplication(values))
+        Calculations.add_calculation_to_history(Multiplication.create(values))
         return True
+
     @staticmethod
-    def divide_numbers( values: tuple):
+    def __truediv__(values: tuple):
         """ Division number from result"""
-        Calculations.add_calculation(Division(values))
+        Calculations.add_calculation_to_history(Division.create(values))
         return True
