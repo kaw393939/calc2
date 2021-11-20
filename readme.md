@@ -1,5 +1,6 @@
 # Calculator Project Setup
 [![Build Status](https://app.travis-ci.com/LuisB3/calc2.svg?branch=Refactor4)](https://app.travis-ci.com/LuisB3/calc2)
+https://app.travis-ci.com/LuisB3/calc2.svg?branch=Refactor4
 
 To run tests, Lint, and Coverage report use this command:
 
