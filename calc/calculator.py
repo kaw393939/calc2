@@ -1,13 +1,30 @@
-""" This is the calculator function"""
+"""This class creates a calculator"""
 from calc.history.calculations import Calculations
 
 class Calculator:
-    """Calculator class"""
+    """This is the Calculator class"""
+
+    history = []
+    @staticmethod
+    def get_results_of_first_calculation_added_to_history():
+        """ This is the get first result class"""
+        return Calculator.history[0].get_result()
+
+    @staticmethod
+    def clear_history():
+        """ This is the clear result class"""
+        Calculator.history.clear()
+        return True
+
+    @staticmethod
+    def history_count():
+        """ This is the history count class"""
+        return len(Calculator.history)
 
     @staticmethod
     def get_last_result_value():
         """Gets last result of calculation"""
-        return Calculations.get_last_calculation_result_value()
+        return Calculations.get_last_calculation_result()
 
     @staticmethod
     def add_numbers(tuple_values: tuple):
@@ -30,8 +47,5 @@ class Calculator:
     @staticmethod
     def divide_numbers(tuple_values: tuple):
         """Uses tuples to divide numbers"""
-        division = Division.create(value_a, value_b)
-        Calculator.add_calculation_to_history(tuple_values)
+        Calculations.add_division_calculation(tuple_values)
         return True
-
-
