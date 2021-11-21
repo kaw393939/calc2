@@ -4,3 +4,4 @@ pycodestyle
 pytest-pylint
 pandas
 openpyxl
+pytest-cov

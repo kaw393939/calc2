@@ -10,7 +10,6 @@ class Calculation(ABC):
     @staticmethod
     def convert_args_to_list_float(values):
         """ standardize values to list of floats"""
-        #import pdb; pdb.set_trace()
         list_values_float = []
         for item in values:
             list_values_float.append(float(item))

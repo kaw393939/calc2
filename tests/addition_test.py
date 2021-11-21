@@ -1,26 +1,20 @@
 """Testing Addition"""
-import os
-
-import pandas as pd
 
 from calc.calculations.addition import Addition
+from tests.datafromdf_testing import PandaExtractData
+# from tests.export_result_to_excel import Export
 
-BASE_DIR = os.path.dirname(os.path.realpath(__file__)) # Get Current Working Directory
-
-
-def test_calculation_addition():
+def test_static_calculation_addition():
     """testing that our calculator has a static method for addition"""
     #Arrange
-    file_path = os.path.join(BASE_DIR, "addition_15values.xlsx")
-    df = pd.read_excel(io=file_path, index_col=None, names=["value_1",	"value_2",	"result"], dtype='float')
-    for index, row in df.iterrows():
+    filename = "addition_1000values.xlsx"
+    df_values = PandaExtractData.get_data_from_dataframe(filename)
+    for index, row in df_values.iterrows():
         tuple_values = (row.value_1, row.value_2)
-        #print(tuple_values)
+    #Act
         addition = Addition.create(tuple_values)
-        assert addition.get_result() == df['result'][index]
+    #Assert
+        assert addition.get_result() == df_values['result'][index]
 
-    with pd.ExcelWriter('addition_15values.xlsx', mode='a') as writer:
-        df.to_excel(writer, sheet_name='Tested_output', index=False)
-        writer.save()
-
-
+    # #calling method of export class to export the calculated data from history to excel file
+    # export_results = Export.export_result_excel_file()

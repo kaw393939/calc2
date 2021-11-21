@@ -11,8 +11,3 @@ class Multiplication(Calculation):
             else:
                 multiplication_value = multiplication_value * value
         return multiplication_value
-
-        # result = 1.0
-        # for value in self.values:
-        #     result = result * value
-        # return result
