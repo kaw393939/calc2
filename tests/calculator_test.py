@@ -1,13 +1,13 @@
 """Testing the Calculator"""
 import pytest
 from calc.calculator import Calculator
-from calc.history.calculations import Calculations
+from calc.history.calculator_result import CalculatorResult
 
 
 @pytest.fixture(name="clear_history_fixture")
 def clear_history_fixture_test():
     """define a function that will run each time you pass it to a test, it is called a fixture"""
-    return Calculations.clear_history()
+    return CalculatorResult.clear_history()
     # You have to add the fixture function as a parameter to the test that you want to use it with
 
 def test_calculator_add_static(clear_history_fixture):

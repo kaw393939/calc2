@@ -7,7 +7,7 @@ def test_calculation_division():
     """testing that our calculator has a static method for multiplication"""
     #Arrange
     filename = "division_1000values.xlsx"
-    df_values = PandaExtractData.get_data_from_dataframe(filename)
+    df_values = PandaExtractData.read_file(filename)
     for index, row in df_values.iterrows():
         tuple_values = (row.value_1, row.value_2)
     # Act
@@ -18,17 +18,3 @@ def test_calculation_division():
         except ZeroDivisionError:
             with pytest.raises(ZeroDivisionError):
                 assert division.get_result() is True
-
-
-# def test_calculator_division_exception():
-#     """ Testing division exception for division by zero"""
-#     # Arrange
-#     filename = "division_1000values.xlsx"
-#     df_values = PandaExtractData.get_data_from_dataframe(filename)
-#
-#     tuple_values = df_values.value_1[1], df_values.value_2[1]
-#     # Act
-#     division = Division.create(tuple_values)
-#     # Assert
-#     with pytest.raises(ZeroDivisionError):
-#         assert division.get_result() is True
