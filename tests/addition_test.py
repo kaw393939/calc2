@@ -1,7 +1,7 @@
 """Testing Addition"""
 
 from calc.calculations.addition import Addition
-from tests.datafromdf_testing import PandaExtractData
+from tests.panda_extract_data import PandaExtractData
 # from tests.export_result_to_excel import Export
 
 def test_static_calculation_addition():

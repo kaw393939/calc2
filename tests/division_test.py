@@ -1,7 +1,7 @@
 """Testing Division"""
 import pytest
 from calc.calculations.division import Division
-from tests.datafromdf_testing import PandaExtractData
+from tests.panda_extract_data import PandaExtractData
 
 def test_calculation_division():
     """testing that our calculator has a static method for multiplication"""

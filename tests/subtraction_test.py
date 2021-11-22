@@ -1,6 +1,6 @@
 """Testing Subtraction"""
 from calc.calculations.subtraction import Subtraction
-from tests.datafromdf_testing import PandaExtractData
+from tests.panda_extract_data import PandaExtractData
 
 def test_static_calculation_subtraction():
     """testing that our calculator has a static method for subtraction"""

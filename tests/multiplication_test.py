@@ -1,6 +1,6 @@
 """Testing Multiplication"""
 from calc.calculations.multiplication import Multiplication
-from tests.datafromdf_testing import PandaExtractData
+from tests.panda_extract_data import PandaExtractData
 
 def test_calculation_multiplication():
     """testing that our calculator has a static method for multiplication"""

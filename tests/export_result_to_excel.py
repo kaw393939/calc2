@@ -1,7 +1,7 @@
 """Class for exporting data to external file"""
 
 import pandas as pd
-from tests.datafromdf_testing import PandaExtractData
+from tests.panda_extract_data import PandaExtractData
 from calc.history.calculator_result import CalculatorResult
 
 class Export(PandaExtractData):
