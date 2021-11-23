@@ -1,12 +1,10 @@
 """Using pandas to extract data from external file for testing all operations"""
 
 import os
-
 import pandas as pd
 
 
 class PandaExtractData:
-    # pylint: disable=too-few-public-methods
     """Dataframe class"""
 
     @staticmethod
@@ -33,7 +31,6 @@ class PandaExtractData:
 
     @staticmethod
     def _process_csv_file(file_name):
-        # pylint: disable=unnecessary-pass
         """Method to process data from csv file to df"""
         base_dir = os.path.dirname(os.path.realpath(__file__))
         file_path = os.path.join(base_dir, "input_excel_files", file_name)

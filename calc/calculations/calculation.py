@@ -27,7 +27,6 @@ class Calculation(ABC):
 
     @abstractmethod
     def get_result(self):
-        """creating this class to show abstraction and
-        overriding type of polymorphism"""
+        """creating this class to show abstraction and overriding type of polymorphism"""
         return True
     

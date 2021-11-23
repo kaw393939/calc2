@@ -5,7 +5,6 @@ from tests.panda_extract_data import PandaExtractData
 from calc.history.calculator_result import CalculatorResult
 
 class Export(PandaExtractData):
-    # pylint: disable=abstract-class-instantiated
     """Exporting data class"""
     @staticmethod
     def export_result_excel_file():
