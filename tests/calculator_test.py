@@ -4,13 +4,6 @@ from calc.calculator import Calculator
 #from tests.calculator_result_test import clear_history_fixture_test
 from tests.panda_extract_data import PandaExtractData
 
-
-# @pytest.fixture(name="clear_history_fixture")
-# def clear_history_fixture_test():
-#     """define a function that will run each time you pass it to a test, it is called a fixture"""
-#     return CalculatorResult.clear_history()
-
-@pytest.mark.usefixtures("clear_history_fixture")
 def test_calculator_add_static(clear_history_fixture):
     """testing that our calculator has a static method for addition"""
     #Arrange

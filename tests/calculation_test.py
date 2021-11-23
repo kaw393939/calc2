@@ -4,7 +4,7 @@ from calc.calculations.calculation import Calculation
 from tests.panda_extract_data import PandaExtractData
 
 def test_convert_args_to_list_float():
-    """Testing the overridden method of super class"""
+    """Testing the method of super class"""
     #Arrange
     filename = "subtraction_15values.xlsx"
     df_values = PandaExtractData.read_file(filename)

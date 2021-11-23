@@ -1,20 +1,14 @@
 """Testing Addition"""
 
 from calc.calculations.addition import Addition
-from tests.panda_extract_data import PandaExtractData
-# from tests.export_result_to_excel import Export
 
-def test_static_calculation_addition():
+def test_static_calculation_addition(addition_file_fixture):
     """testing that our calculator has a static method for addition"""
-    #Arrange
-    filename = "addition_1000values.xlsx"
-    df_values = PandaExtractData.read_file(filename)
-    for index, row in df_values.iterrows():
+
+    for index, row in addition_file_fixture.iterrows():
         tuple_values = (row.value_1, row.value_2)
-    #Act
         addition = Addition.create(tuple_values)
-    #Assert
-        assert addition.get_result() == df_values['result'][index]
+        assert addition.get_result() == row.result
 
     # #calling method of export class to export the calculated data from history to excel file
     # export_results = Export.export_result_excel_file()

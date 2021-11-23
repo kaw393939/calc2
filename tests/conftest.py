@@ -1,4 +1,6 @@
 """Fixtures to be ued globally under the tests directory"""
+import os
+import pandas as pd
 import pytest
 from calc.calculations.addition import Addition
 from calc.calculations.subtraction import Subtraction
@@ -29,3 +31,11 @@ def setup_addition_calculation_fixture_test():
     CalculatorResult.add_calculation_to_history(Multiplication.create(numbers_tuple3))
     CalculatorResult.add_calculation_to_history(Division.create(numbers_tuple4))
     return True
+
+@pytest.fixture(name="addition_file_fixture")
+def read_addition_file():
+    """Method to read the file type"""
+    file_name = "addition_1000values.xlsx"
+    return  PandaExtractData(file_name).read_file()
+
+
