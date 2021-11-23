@@ -5,7 +5,12 @@ class Calculation(ABC):
     """ calculation abstract base class"""
     def __init__(self,values: tuple):
         """ constructor method"""
-        self.values = Calculation.convert_args_to_list_float(values)
+        self._values = Calculation.convert_args_to_list_float(values)
+
+    @property
+    def values(self):
+        """Getter method for values"""
+        return self._values
 
     @staticmethod
     def convert_args_to_list_float(values):
