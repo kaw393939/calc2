@@ -2,55 +2,65 @@
 import pytest
 from calc.calculator import Calculator
 from calc.history.calculator_result import CalculatorResult
+from tests.panda_extract_data import PandaExtractData
 
 
 @pytest.fixture(name="clear_history_fixture")
 def clear_history_fixture_test():
     """define a function that will run each time you pass it to a test, it is called a fixture"""
     return CalculatorResult.clear_history()
-    # You have to add the fixture function as a parameter to the test that you want to use it with
 
 def test_calculator_add_static(clear_history_fixture):
     """testing that our calculator has a static method for addition"""
     #Arrange
-    tuple_values = (1.0, 2.0, 3.0)
+    filename = "addition_1000values.xlsx"
+    df_values_add = PandaExtractData.read_file(filename)
+    tuple_values = df_values_add.value_1[5], df_values_add.value_2[5]
     #Act
     Calculator.__add__(tuple_values)
     #Assert
-    assert Calculator.get_last_calculation_from_result() == 6.0 and clear_history_fixture is True
+    assert Calculator.get_last_calculation_from_result() == df_values_add['result'][5] and clear_history_fixture is True
 
 def test_calculator_subtract_static(clear_history_fixture):
     """Testing the subtract method of the calc"""
     #Arrange
-    tuple_values = (1.0, 2.0, 3.0)
+    filename = "subtraction_1000values.xlsx"
+    df_values_sub = PandaExtractData.read_file(filename)
+    tuple_values = df_values_sub.value_1[5], df_values_sub.value_2[5]
     #Act
     Calculator.__sub__(tuple_values)
     #Assert
-    assert Calculator.get_last_calculation_from_result() == -4.0 and clear_history_fixture is True
+    assert Calculator.get_last_calculation_from_result() == df_values_sub['result'][5] and clear_history_fixture is True
 
 def test_calculator_multiply_static(clear_history_fixture):
     """Testing the multiplication method of the calc"""
     #Arrange
-    tuple_values = (1.0, 2.0, 1.5)
+    filename = "multiplication_1000values.xlsx"
+    df_values_mul = PandaExtractData.read_file(filename)
+    tuple_values = df_values_mul.value_1[5], df_values_mul.value_2[5]
     #Act
     Calculator.__mul__(tuple_values)
     #Assert
-    assert Calculator.get_last_calculation_from_result() == 3.0 and clear_history_fixture is True
+    assert Calculator.get_last_calculation_from_result() == df_values_mul['result'][5] and clear_history_fixture is True
 
 def test_calculator_divide_static(clear_history_fixture):
     """Testing the division method of the calc"""
     #Arrange
-    tuple_values = (1.0, 2.0, 4.5)
+    filename = "division_1000values.xlsx"
+    df_values_div = PandaExtractData.read_file(filename)
+    tuple_values = df_values_div.value_1[5], df_values_div.value_2[5]
     #Act
     Calculator.__truediv__(tuple_values)
     #Assert
-    assert Calculator.get_last_calculation_from_result() == 0.11111 \
+    assert Calculator.get_last_calculation_from_result() == df_values_div['result'][5].round(decimals=5) \
            and clear_history_fixture is True
 
 def test_calculator_divide_exception_static(clear_history_fixture):
-    """Testing the division method of the calc"""
+    """Testing the division method of the calc for the exception"""
     #Arrange
-    tuple_values = (1.0, 0.0, 4.5)
+    filename = "division_1000values.xlsx"
+    df_values_div_exp = PandaExtractData.read_file(filename)
+    tuple_values = df_values_div_exp.value_1[2], df_values_div_exp.value_2[0]
     #Act
     Calculator.__truediv__(tuple_values)
     #Assert
