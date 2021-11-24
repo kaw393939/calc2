@@ -1,13 +1,13 @@
 """Testing Division"""
 import pytest
 from calc.calculations.division import Division
-from tests.panda_extract_data import PandaExtractData
+from calc.utils.file_reader import PandasFileReader
 
 def test_calculation_division():
     """testing that our calculator has a static method for multiplication"""
     #Arrange
     filename = "division_1000values.xlsx"
-    df_values = PandaExtractData.read_file(filename)
+    df_values = PandasFileReader(filename).read_file()
     for index, row in df_values.iterrows():
         tuple_values = (row.value_1, row.value_2)
     # Act

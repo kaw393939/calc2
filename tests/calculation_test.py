@@ -1,13 +1,13 @@
 """Testing the calculation class"""
 
 from calc.calculations.calculation import Calculation
-from tests.panda_extract_data import PandaExtractData
+from calc.utils.file_reader import PandasFileReader
 
 def test_convert_args_to_list_float():
     """Testing the method of super class"""
     #Arrange
     filename = "subtraction_15values.xlsx"
-    df_values = PandaExtractData.read_file(filename)
+    df_values = PandasFileReader(filename).read_file()
 
     numbers_tuple = df_values.value_1[0], df_values.value_2[0], df_values.value_1[1], df_values.value_2[1]
     #Act

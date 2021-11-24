@@ -1,6 +1,6 @@
 """Testing pandas class"""
 import pytest
-from tests.panda_extract_data import PandaExtractData
+from calc.utils.file_reader import PandasFileReader
 
 
 def test_pandas_file_type_csv_check():
@@ -8,7 +8,7 @@ def test_pandas_file_type_csv_check():
     #Arrange
     file_name = "addition_15values.csv"
     #Act
-    df_test_csv_data = PandaExtractData.read_file(file_name)
+    df_test_csv_data = PandasFileReader(file_name).read_file()
     #Assert
     assert df_test_csv_data is not None
 
@@ -17,7 +17,7 @@ def test_pandas_file_type_xlsx_check():
     #Arrange
     file_name = "subtraction_15values.xlsx"
     #Act
-    df_test_xlsx_data = PandaExtractData.read_file(file_name)
+    df_test_xlsx_data = PandasFileReader(file_name).read_file()
     #Assert
     assert df_test_xlsx_data is not None
 
@@ -28,4 +28,4 @@ def test_pandas_file_type_txt_check():
     #Act
     with pytest.raises(ValueError):
         #Assert
-        assert PandaExtractData.read_file(file_name)
+        assert PandasFileReader(file_name).read_file()
