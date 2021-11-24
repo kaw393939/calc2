@@ -29,9 +29,9 @@ class PandasFileReader:
         df_data = pd.read_excel(io=file_path, index_col=None, names=["value_1", "value_2", "result"], dtype='float')
         return df_data
 
-    def _process_csv_file(self, file_name):
+    def _process_csv_file(self):
         """Method to process data from csv file to df"""
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_path = os.path.join(base_dir, "input_excel_files", self.file_name)
+        file_path = os.path.join(base_dir, "../../tests/input_excel_files", self.file_name)
         df_data = pd.read_csv(file_path, header=None)
         return df_data

@@ -44,4 +44,14 @@ def read_subtraction_file():
     file_name = "subtraction_1000values.xlsx"
     return  PandasFileReader(file_name).read_file()
 
+@pytest.fixture(name="multiplication_file_fixture", scope="module")
+def read_multiplication_file():
+    """Method to read the file type"""
+    file_name = "multiplication_1000values.xlsx"
+    return  PandasFileReader(file_name).read_file()
 
+@pytest.fixture(name="division_file_fixture", scope="module")
+def read_division_file():
+    """Method to read the file type"""
+    file_name = "division_1000values.xlsx"
+    return  PandasFileReader(file_name).read_file()
