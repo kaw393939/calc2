@@ -3,13 +3,13 @@
 from calc.calculations.calculation import Calculation
 from calc.utils.file_reader import PandasFileReader
 
-def test_convert_args_to_list_float():
+def test_convert_args_to_list_float(subtraction_test_file_fixture):
     """Testing the method of super class"""
     #Arrange
-    filename = "subtraction_15values.xlsx"
-    df_values = PandasFileReader(filename).read_file()
-
-    numbers_tuple = df_values.value_1[0], df_values.value_2[0], df_values.value_1[1], df_values.value_2[1]
+    numbers_tuple = subtraction_test_file_fixture.value_1[0], \
+                    subtraction_test_file_fixture.value_2[0], \
+                    subtraction_test_file_fixture.value_1[1], \
+                    subtraction_test_file_fixture.value_2[1]
     #Act
     numbers_tuple_list = Calculation.convert_args_to_list_float(numbers_tuple)
     #Assert

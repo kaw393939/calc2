@@ -55,3 +55,8 @@ def read_division_file():
     """Method to read the file type"""
     file_name = "division_1000values.xlsx"
     return  PandasFileReader(file_name).read_file()
+@pytest.fixture(name="subtraction_test_file_fixture", scope="module")
+def read_subtraction_test_file():
+    """Method to read the file type"""
+    file_name = "subtraction_15values.xlsx"
+    return  PandasFileReader(file_name).read_file()
