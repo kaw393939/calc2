@@ -1,6 +1,6 @@
 # Calculator Refactor branch4
 
-[![Build Status](https://app.travis-ci.com/kn329/calc2.svg?branch=Refactor_branch4](https://app.travis-ci.com/kaw393939/calc2)
+[![Build Status](https://app.travis-ci.com/kn329/calc2.svg?branch=Main](https://app.travis-ci.com/kaw393939/calc2)
 
 To run tests, Lint, and Coverage report use this command:
 
