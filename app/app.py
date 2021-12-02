@@ -6,7 +6,7 @@ from app.controllers.calculator_controller import CalculatorController
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def index_get():
     return IndexController.get()
 
