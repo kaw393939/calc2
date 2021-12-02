@@ -1,6 +1,6 @@
 """Testing Multiplication"""
-from calc.calculations.multiplication import Multiplication
 import logging
+from calc.calculations.multiplication import Multiplication
 
 logger = logging.getLogger(__name__)
 
@@ -13,5 +13,5 @@ def test_calculation_multiplication(multiplication_file_fixture):
         multiplication = Multiplication.create(tuple_values)
     #Assert
         result = multiplication.get_result()
-        logger.info(f"{index}  - {row.value_1} * {row.value_2} = {result}")
+        logger.info("%s  - %s * %s = %s", index, row.value_1, row.value_2, result)
         assert result == multiplication_file_fixture['result'][index]

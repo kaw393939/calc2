@@ -1,7 +1,5 @@
 """read file type of external file"""
 import os
-import pdb
-
 import pandas as pd
 
 class PandasFileReader:
@@ -12,10 +10,6 @@ class PandasFileReader:
     @property
     def file_name(self):
         return self._file_name
-
-    def tests_directory(self):
-        test_path = os.path.dirname(os.getcwd(self._directory_name))
-        return test_path
 
     def read_file(self):
         """Method to read the file type"""
