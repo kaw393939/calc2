@@ -122,3 +122,12 @@ pytest calculator_result_test.py
 pytest calculator_result_test.py
 pytest calculator_result_test.py
 pytest calculator_result_test.py
+pytest multiplication_test.py
+cd ..
+pytest multiplication_test.py
+ls
+cd myuser
+ls
+cd tests
+pytest multiplication_test.py
+pytest --pylint --cov

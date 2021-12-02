@@ -1,6 +1,8 @@
 """Testing Multiplication"""
 from calc.calculations.multiplication import Multiplication
-from calc.utils.file_reader import PandasFileReader
+import logging
+
+logger = logging.getLogger(__name__)
 
 def test_calculation_multiplication(multiplication_file_fixture):
     """testing that our calculator has a static method for multiplication"""
@@ -10,4 +12,6 @@ def test_calculation_multiplication(multiplication_file_fixture):
     # Act
         multiplication = Multiplication.create(tuple_values)
     #Assert
-        assert multiplication.get_result() == multiplication_file_fixture['result'][index]
+        result = multiplication.get_result()
+        logger.info(f"{index}  - {row.value_1} * {row.value_2} = {result}")
+        assert result == multiplication_file_fixture['result'][index]

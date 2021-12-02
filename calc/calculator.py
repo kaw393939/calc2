@@ -1,4 +1,4 @@
-""" This is the increment function"""
+""" This is the calculator class"""
 from calc.calculations.addition import Addition
 from calc.calculations.subtraction import Subtraction
 from calc.calculations.multiplication import Multiplication
@@ -26,12 +26,12 @@ class Calculator:
 
     @staticmethod
     def __mul__(values: tuple):
-        """ multiplication number from result"""
+        """ multiply list of numbers from result"""
         CalculatorResult.add_calculation_to_history(Multiplication.create(values))
         return True
 
     @staticmethod
     def __truediv__(values: tuple):
-        """ Division number from result"""
+        """ Divide list of numbers from result"""
         CalculatorResult.add_calculation_to_history(Division.create(values))
         return True

@@ -1,0 +1,21 @@
+1638417923,38 tests.addition_test INFO 0  - 1 + 2 = 3.0
+1638417923,39 tests.addition_test INFO 1  - 2 + 3 = 5.0
+1638417923,40 tests.addition_test INFO 2  - 3 + 4 = 7.0
+1638417923,40 tests.addition_test INFO 3  - 4 + 5 = 9.0
+1638417923,41 tests.addition_test INFO 4  - 5 + 6 = 11.0
+1638417923,42 tests.addition_test INFO 5  - 6 + 7 = 13.0
+1638417923,43 tests.addition_test INFO 6  - 7 + 8 = 15.0
+1638417923,44 tests.addition_test INFO 7  - 8 + 9 = 17.0
+1638417923,45 tests.addition_test INFO 8  - 9 + 10 = 19.0
+1638417923,45 tests.addition_test INFO 9  - 10 + 11 = 21.0
+1638417923,46 tests.addition_test INFO 10  - 11 + 12 = 23.0
+1638417923,47 tests.addition_test INFO 11  - 12 + 13 = 25.0
+1638417923,48 tests.addition_test INFO 12  - 13 + 14 = 27.0
+1638417923,48 tests.addition_test INFO 13  - 14 + 15 = 29.0
+1638418016,691 tests.multiplication_test INFO 0  - 1 * 2 = 2.0
+1638418016,692 tests.multiplication_test INFO 1  - 2 * 2 = 4.0
+1638418016,693 tests.multiplication_test INFO 2  - 4 * 4 = 16.0
+1638418030,683 tests.division_test INFO 0  - 0 / 1 = 0.0
+1638418030,684 tests.division_test ERROR 1 Divide by zero error
+1638418063,878 tests.division_test INFO 0  - 0 / 1 = 0.0
+1638418532,957 tests.division_test ERROR 1 Divide by zero error

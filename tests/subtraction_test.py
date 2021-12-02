@@ -1,5 +1,8 @@
 """Testing Subtraction"""
 from calc.calculations.subtraction import Subtraction
+import logging
+logger = logging.getLogger(__name__)
+
 
 def test_static_calculation_subtraction(subtraction_file_fixture):
     """testing that our calculator has a static method for subtraction"""
@@ -9,4 +12,6 @@ def test_static_calculation_subtraction(subtraction_file_fixture):
     #Act
         subtraction = Subtraction.create(tuple_values)
     #Assert
-        assert subtraction.get_result() == subtraction_file_fixture['result'][index]
+        result = subtraction.get_result()
+        logger.info(f"{index}  - {row.value_1} * {row.value_2} = {result}")
+        assert result == subtraction_file_fixture['result'][index]

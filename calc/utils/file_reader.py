@@ -1,5 +1,7 @@
 """read file type of external file"""
 import os
+import pdb
+
 import pandas as pd
 
 class PandasFileReader:
@@ -10,6 +12,10 @@ class PandasFileReader:
     @property
     def file_name(self):
         return self._file_name
+
+    def tests_directory(self):
+        test_path = os.path.dirname(os.getcwd(self._directory_name))
+        return test_path
 
     def read_file(self):
         """Method to read the file type"""
@@ -32,6 +38,6 @@ class PandasFileReader:
     def _process_csv_file(self):
         """Method to process data from csv file to df"""
         base_dir = os.path.dirname(os.path.realpath(__file__))
-        file_path = os.path.join(base_dir, "../../tests/input_excel_files", self.file_name)
-        df_data = pd.read_csv(file_path, header=None)
+        file_path = os.path.join(base_dir, "../../tests/input_csv_files", self.file_name)
+        df_data = pd.read_csv(file_path, header=1,names=["value_1", "value_2", "result"])
         return df_data
