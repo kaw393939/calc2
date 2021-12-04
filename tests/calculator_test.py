@@ -1,72 +1,54 @@
-#"""This tests the Calculator"""
+"""Testing the Calculator"""
 import pytest
-import pandas as pd
 from calc.calculator import Calculator
-from calc.history.calculations import Calculations
-from calc.calculations.addition import Addition
-from calc.calculations.multiplication import Multiplication
-from calc.calculations.subtraction import Subtraction
-from calc.calculations.division import Division
 
-@pytest.fixture
-def clear_history_fixture():
-    """Clears history"""
-    # pylint: disable=redefined-outer-name
-    Calculations.clear_history()
+def test_calculator_add_static(clear_history_fixture, addition_file_fixture):
+    """testing that our calculator has a static method for addition"""
+    #Arrange
+    tuple_values = addition_file_fixture.value_1[5], addition_file_fixture.value_2[5]
+    #Act
+    Calculator.__add__(tuple_values)
+    #Assert
+    assert Calculator.get_last_calculation_from_result() == addition_file_fixture['result'][5] \
+           and clear_history_fixture is True
 
-def test_calculator_add_static(clear_history_fixture):
-    """Tests static addition"""
-    csv_reader = pd.read.csv("source/addition.csv")
-    # pylint: disable=unused-argument,redefined-outer-name
-    my_tuple = (4.0,8.0,2.0)
-    Calculations.Add_numbers(my_tuple)
-    assert Calculations.get_last_result_value() == 14.0
+def test_calculator_subtract_static(clear_history_fixture, subtraction_file_fixture):
+    """Testing the subtract method of the calc"""
+    #Arrange
+    tuple_values = subtraction_file_fixture.value_1[5], subtraction_file_fixture.value_2[5]
+    #Act
+    Calculator.__sub__(tuple_values)
+    #Assert
+    assert Calculator.get_last_calculation_from_result() == subtraction_file_fixture['result'][5] \
+           and clear_history_fixture is True
 
-#def test_calculator_subtract_static(clear_history_fixture):
-    #"""Tests static subtraction"""
-    # pylint: disable=unused-argument,redefined-outer-name
-    #my_tuple = (9.0,1.0)
-    #Calculations.subtract_numbers(my_tuple)
-    #assert Calculations.get_last_result_value() == 8.0
+def test_calculator_multiply_static(clear_history_fixture, multiplication_file_fixture):
+    """Testing the multiplication method of the calc"""
+    #Arrange
+    tuple_values = multiplication_file_fixture.value_1[5], multiplication_file_fixture.value_2[5]
+    #Act
+    Calculator.__mul__(tuple_values)
+    #Assert
+    assert Calculator.get_last_calculation_from_result() == multiplication_file_fixture['result'][5] \
+           and clear_history_fixture is True
 
-    def test_calculator_subtract_static(clear_history_fixture):
-        """Testing the subtract method of the calc"""
-        # pylint: disable=unused-argument,redefined-outer-name
-        # using Tuple instead of args because we can pack as much data as we need into the tuple
-        my_tuple = (1.0, 2.0, 3.0)
-        # creating the calculation result object
-        calculation_result_object = Calculator.subtract_numbers(my_tuple)
-        # testing the instance
-        assert isinstance(calculation_result_object, Subtraction)
-        # testing the last result of the calculation
-        assert Calculator.get_last_result_value() == -6.0
-        # testing that the result object performs the calculation
-        assert calculation_result_object.get_result() == -6.0
+def test_calculator_divide_static(clear_history_fixture, division_file_fixture):
+    """Testing the division method of the calc"""
+    #Arrange
+    tuple_values = division_file_fixture.value_1[5], division_file_fixture.value_2[5]
+    #Act
+    Calculator.__truediv__(tuple_values)
+    #Assert
+    assert Calculator.get_last_calculation_from_result() == division_file_fixture['result'][5].round(decimals=5) \
+           and clear_history_fixture is True
 
-def test_calculator_multiply(clear_history_fixture):
-    """Tests static multiplication"""
-    # pylint: disable=unused-argument,redefined-outer-name
-    my_tuple = (5.0,2.0,2.0)
-    Calculations.multiply_numbers(my_tuple)
-    assert Calculations.get_last_result_value() == 20.0
-
-def test_calculator_divide(clear_history_fixture):
-    """Tests static division"""
-    # pylint: disable=unused-argument,redefined-outer-name
-    my_tuple = (6.0,2.0)
-    Calculations.divide_numbers(my_tuple)
-    assert Calculations.get_last_result_value() == 3.0
-
-def test_calculator_divide_by_zero(clear_history_fixture):
-    """Testing the divide method of the calculator if someone attempts to divide by zero"""
-    # pylint: disable=redefined-outer-name,unused-argument
-    my_tuple = (25.0, 0.0)
-    Calculations.divide_numbers(my_tuple)
-    assert Calculations.get_last_result_value() == "Cannot divide by zero"
-
-    csv_reader = pd.read_csv("source/addition.csv")
-    for index, row in csv_reader.iterrows():
-        values = (row.value1, row.value2)
-        addition = Addition.create(values)
-        addition_result = csv_reader["result"][index]
-        assert addition.get_result() == addition_result
+def test_calculator_divide_exception_static(clear_history_fixture, division_file_fixture):
+    """Testing the division method of the calc for the exception"""
+    #Arrange
+    tuple_values = division_file_fixture.value_1[2], division_file_fixture.value_2[0]
+    #Act
+    Calculator.__truediv__(tuple_values)
+    #Assert
+    with pytest.raises(ZeroDivisionError):
+        assert Calculator.get_last_calculation_from_result() is True \
+               and clear_history_fixture is True

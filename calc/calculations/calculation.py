@@ -10,17 +10,22 @@
 #        """class method"""
 #        return cls(value_a, value_b)
 """Calculation Class"""
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
-class Calculation:
-    """ calculation abstract base class"""
+class Calculation(ABC):
+    """Calculation abstract base class"""
     def __init__(self,values: tuple):
-        """ constructor method"""
+        """Constructor method"""
         self.values = Calculation.convert_args_to_list_float(values)
+
+    @property
+    def values(self):
+        """Method for values"""
+        return self._values
 
     @staticmethod
     def convert_args_to_list_float(values):
-        """ standardize values to list of floats"""
+        """Convert values to floats"""
         list_values_float = []
         for item in values:
             list_values_float.append(float(item))
@@ -28,10 +33,10 @@ class Calculation:
 
     @classmethod
     def create(cls, values: tuple):
-        """Factory method -class method to create objects of all individual operations"""
+        """Class method to create objects of operations"""
         return cls(values)
 
     @abstractmethod
     def get_result(self):
-        """creating this class to show overriding polymorphism"""
+        """Creating this class to show overriding polymorphism"""
         return True

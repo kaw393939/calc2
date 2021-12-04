@@ -12,7 +12,7 @@ class Multiplication(Calculation):
         #return self.value_a * self.value_b
         for index, value in enumerate(self.values):
             if index == 0:
-                multiplication_values = value
+                multiplication_value = value
             else:
-                multiplication_values = multiplication_values * value
-        return multiplication_values
+                multiplication_value = multiplication_value * value
+        return multiplication_value
