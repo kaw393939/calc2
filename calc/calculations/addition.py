@@ -7,5 +7,4 @@ class Addition(Calculation):
     """The addition class has one method to get the result of the calculation"""
     def get_result(self):
         """You need to use self to reference the data contained in the instance of the object"""
-#        return self.value_a + self.value_b
         return sum(self.values)
