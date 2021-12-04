@@ -1,5 +1,4 @@
 """Fixtures for tests"""
-
 import pytest
 from calc.calculations.addition import Addition
 from calc.calculations.subtraction import Subtraction

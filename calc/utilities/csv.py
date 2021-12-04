@@ -1,8 +1,6 @@
 """this is the CSV code"""
-# Load the Pandas libraries with alias 'pd'
 import os
 import pandas as pd
-# Read data from file '*.csv'
 
 class PandasFileReader:
     """File reader class"""
@@ -11,6 +9,7 @@ class PandasFileReader:
 
     @property
     def file_name(self):
+        """missing arg"""
         return self._file_name
 
     def read_file(self):

@@ -2,7 +2,6 @@
 import pytest
 from calc.calculations.division import Division
 
-
 def test_calculation_division(division_file_fixture):
     """testing static method for division"""
     for index, row in division_file_fixture.iterrows():

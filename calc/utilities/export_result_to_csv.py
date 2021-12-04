@@ -8,9 +8,10 @@ class Export:
     """Exporting data class"""
     @staticmethod
     def export_result_csv_file():
+        #too few methods error
         """Exporting the calculated result to csv file"""
         result = CalculatorResult.history
         df_result = pd.DataFrame(result, columns=['result'])
-        with pd.ExcelWriter('../../tests/source/addition_result.csv', mode='a', if_sheet_exists='replace') as writer:
-            df_result.to_csv(writer, sheet_name='Tested_output', index=False)
+        with pd.CSVWriter('../../tests/source/addition_result.csv', mode='a', if_sheet_exists='replace') as writer:
+            df_result.to_csv(writer, index=False)
             writer.save()

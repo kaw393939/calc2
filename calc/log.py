@@ -3,7 +3,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-f = logging.Formatter('%(recored_number)s %(asctime)s - %(levelname)s - %(message)s','%Y-%m-%d %H:%M:%S')
+f = logging.Formatter('%(record_number)s %(asctime)s - %(levelname)s - %(message)s','%Y-%m-%d %H:%M:%S')
 fh = logging.FileHandler('demo.log')
 fh.setFormatter(f)
 logger.addHandler(fh)
