@@ -1,73 +1,49 @@
-"""Testing the Calculator"""
-import pprint
-
+#"""This tests the Calculator"""
 import pytest
+import pandas as pd
+from calc.calculator import Calculator
+from calc.history.calculations import Calculations
+from calc.calculations.addition import Addition
 
-from calculator.calculator import Calculator
-
-#this is how you define a function that will run each time you pass it to a test
 @pytest.fixture
-def clear_history():
-    """ This is the clear history class"""
-    Calculator.clear_history()
-
-def test_calculator_add(clear_history):
-    """Testing the Add function of the calculator"""
+def clear_history_fixture():
+    """Clears history"""
     # pylint: disable=redefined-outer-name
-    # pylint: disable=unused-argument
-    assert Calculator.add_number(1,2) == 3
-    assert Calculator.add_number(2,2) == 4
-    assert Calculator.add_number(3,3) == 6
-    assert Calculator.add_number(4,4) == 8
-    assert Calculator.history_count() == 4
-    assert Calculator.get_results_of_last_calculation_added_to_history() == 8
-    pprint.pprint(Calculator.history)
+    Calculation.clear_history()
 
-def test_clear_history(clear_history):
-    """Testing the Clear function of the calculator"""
-    # pylint: disable=redefined-outer-name
-    # pylint: disable=unused-argument
-    assert Calculator.add_number(1,2) == 3
-    assert Calculator.add_number(2,2) == 4
-    assert Calculator.add_number(3,3) == 6
-    assert Calculator.add_number(4,4) == 8
-    assert Calculator.history_count() == 4
-    assert Calculator.clear_history() is True
-    assert Calculator.history_count() == 0
+def test_calculator_add_static(clear_history_fixture):
+    """Tests static addition"""
+    csv_reader = pd.read.csv("source/addition.csv")
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (2.0,4.0,6.0)
+    Calculation.add_numbers(my_tuple)
+    assert Calculation.get_last_result_value() == 12.0
 
-def test_count_history(clear_history):
-    """Testing the count function of the calculator"""
-    # pylint: disable=redefined-outer-name
-    # pylint: disable=unused-argument
-    assert Calculator.history_count() == 0
-    assert Calculator.add_number(1,2) == 3
-    assert Calculator.add_number(2,2) == 4
-    assert Calculator.history_count() == 2
+def test_calculator_subtract_static(clear_history_fixture):
+    """Tests static subtraction"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (9.0,1.0)
+    Calculation.subtract_numbers(my_tuple)
+    assert Calculation.get_last_result_value() == 8.0
 
-def test_get_last_calculation_result(clear_history):
-    """Testing the get last function of the calculator"""
-    # pylint: disable=redefined-outer-name
-    # pylint: disable=unused-argument
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.get_results_of_last_calculation_added_to_history() == 5
+def test_calculator_multiply(clear_history_fixture):
+    """Tests static multiplication"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (5.0,2.0,2.0)
+    Calculation.multiply_numbers(my_tuple)
+    assert Calculation.get_last_result_value() == 20.0
 
-def test_get_first_calculation_result(clear_history):
-    """Testing the get first function of the calculator"""
-    # pylint: disable=redefined-outer-name
-    # pylint: disable=unused-argument
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.get_results_of_first_calculation_added_to_history() == 4
+def test_calculator_divide(clear_history_fixture):
+    """Tests static division"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (6.0,2.0)
+    Calculation.divide_numbers(my_tuple)
+    assert Calculation.get_last_result_value() == 3.0
 
-def test_calculator_subtract(clear_history):
-    """Testing the subtract method of the calculator"""
-    # pylint: disable=redefined-outer-name
-    # pylint: disable=unused-argument
-    assert Calculator.subtract_number(1, 2) == -1
+def test_calculator_divide_by_zero(clear_history_fixture):
+    """Testing the divide method of the calculator if someone attempts to divide by zero"""
+    # pylint: disable=redefined-outer-name,unused-argument
+    my_tuple = (25.0, 0.0)
+    Calculation.divide_numbers(my_tuple)
+    assert Calculation.get_last_result_value() == "Cannot divide by zero"
 
-def test_calculator_multiply(clear_history):
-    """ tests multiplication of two numbers"""
-    # pylint: disable=redefined-outer-name
-    # pylint: disable=unused-argument
-    assert Calculator.multiply_numbers(1,2) == 2

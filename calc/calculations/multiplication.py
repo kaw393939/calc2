@@ -2,11 +2,17 @@
 #This is called a namespace it is like files & folders.
 #It looks like a folder & file path but it is a like a virtual representation
 
-from calc.calculation import Calculation
+from calc.calculations.calculation import Calculation
 
 #This is how you extend the Addition class with the Calculation
 class Multiplication(Calculation):
     """The addition class has one method to get the result of the calculation"""
     def get_result(self):
-        """you need to use self to reference the data contained in the instance of the object"""
-        return self.value_a * self.value_b
+        """getting the multiplication results"""
+        #return self.value_a * self.value_b
+        for index, value in enumerate(self.values):
+            if index == 0:
+                multiplication_values = value
+            else:
+                multiplication_values = multiplication_values * value
+        return multiplication_values
