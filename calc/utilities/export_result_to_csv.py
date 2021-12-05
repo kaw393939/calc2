@@ -1,7 +1,7 @@
 """Class for exporting data to external file"""
 
 import pandas as pd
-from calc.utilities.csv import PandasFileReader
+from calc.utilities.csv import CSVReader
 from calc.history.calculator_result import CalculatorResult
 
 class Export:

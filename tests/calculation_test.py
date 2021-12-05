@@ -1,7 +1,5 @@
 """Testing calculation class"""
 from calc.calculations.calculation import Calculation
-from calc.utilities.csv import PandasFileReader
-
 
 def test_convert_args_to_list_float(subtraction_test_file_fixture):
     """Testing the method of super class"""

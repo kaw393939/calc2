@@ -6,8 +6,7 @@ def test_add_calculation_to_history(clear_history_fixture, setup_history_test_fi
     """Testing clear history after adding calculation"""
     #import pdb;pdb.set_trace()
     assert CalculatorResult.count_history() == 4
-    #assert clear_history_fixture is True
-    #assert setup_addition_calculation_fixture is True
+    #assert add calculation to history
 
 def test_clear_calculation_history(clear_history_fixture, setup_history_test_fixture):
     """Testing clear history after clearing the history"""
@@ -15,8 +14,7 @@ def test_clear_calculation_history(clear_history_fixture, setup_history_test_fix
     CalculatorResult.clear_history()
     assert CalculatorResult.count_history() == 0
     assert CalculatorResult.clear_history() is True
-    #assert clear_history_fixture is True
-    #assert setup_addition_calculation_fixture is True
+    #assert clear history
 
 def test_get_calculation(clear_history_fixture, setup_history_test_fixture):
     """Testing getting calculation from history"""
@@ -24,24 +22,19 @@ def test_get_calculation(clear_history_fixture, setup_history_test_fixture):
     assert CalculatorResult.get_calculation_from_history(1).get_result() == -2.0
     assert CalculatorResult.get_calculation_from_history(2).get_result() == 12.0
     assert CalculatorResult.get_calculation_from_history(3).get_result() == 0.8
-    #assert clear_history_fixture is True
-    #assert setup_addition_calculation_fixture is True
+    #assert get calculation
 
 def test_get_last_calculation_result(clear_history_fixture, setup_history_test_fixture):
     """Testing getting last calculation from history"""
     assert CalculatorResult.get_last_calculation_result() == 0.8
-    #assert clear_history_fixture is True
-    #assert setup_addition_calculation_fixture is True
+    #assert get last calculation
 
 def test_get_first_calculation_result(clear_history_fixture, setup_history_test_fixture):
     """Testing getting first calculation from history"""
-
     assert CalculatorResult.get_first_calculation().get_result() == 3.0
-    #assert clear_history_fixture is True
-    #assert setup_addition_calculation_fixture is True
+    #assert calculator result
 
 def test_count_of_history(clear_history_fixture, setup_history_test_fixture):
     """Testing getting the count of calculations"""
     assert CalculatorResult.count_history() == 4
-    #assert clear_history_fixture is True
-    #assert setup_addition_calculation_fixture is True
+    #assert test count history

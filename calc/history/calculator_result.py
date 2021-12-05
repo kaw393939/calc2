@@ -1,6 +1,5 @@
 """Calculation history Class"""
 
-
 class CalculatorResult:
     """Calculations class manages the history of calculations"""
     history = []

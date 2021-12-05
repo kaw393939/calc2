@@ -10,7 +10,7 @@ class Calculator:
     @staticmethod
     def get_last_calculation_from_result():
         """Get last calculation"""
-        return CalculatorResult.get_last_calculation_result()
+        return CalculatorResult.get_last_calculation_result_value()
 
     @staticmethod
     def __add__(values: tuple):
