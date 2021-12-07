@@ -6,7 +6,7 @@ import time
 
 from calc.calculator import Calculator
 
-cwd = os.getcwd()  #Get working directory
+cwd = os.getcwd()  #Get folder
 files = os.listdir(cwd)  #Get files
 print("Files in %r: %s" % (cwd, files)) #Print
 
