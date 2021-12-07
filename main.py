@@ -6,9 +6,9 @@ import time
 
 from calc.calculator import Calculator
 
-cwd = os.getcwd()  # Get working directory
-files = os.listdir(cwd)  # Get files
-print("Files in %r: %s" % (cwd, files)) #print
+cwd = os.getcwd()  #Get working directory
+files = os.listdir(cwd)  #Get files
+print("Files in %r: %s" % (cwd, files)) #Print
 
 def process(files):
     for file in files:
@@ -65,25 +65,25 @@ def process(files):
             print("division")
             df = pd.read_csv(file)
             results_arr = []
-            # Looping through records
+            # Loop
             for index, row in df.iterrows():
-                # Catching error
+                #Division error
                 if row['value2'] == 0:
                     with open("logs/exceptions.txt", "a") as fp:
                         fp.write(f"File: {file}, Record Number: {index}\n")
                         fp.close()
                     results_arr.append("NaN")
                 else:
-                    # Operation
+                    #Operation
                     temp = Calculator.divide_numbers(row['value1'], row['value2'])
-                    # Write to log
+                    #Write to log fle
                     with open("logs/results.txt", "a") as fp:
                         fp.write(f"Time: {time.time()}, File: {file}, Record Number: {index}, "
                                  f"Operation: divide, Result: {temp}\n")
                         fp.close()
                     results_arr.append(temp)
 
-            # Creating output CSVs
+            #Create CSVs
             df["result"] = results_arr
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
@@ -104,6 +104,6 @@ def main():
         else:
             print("Running...", end="\r")
 
-    return True
+        return True
 
 main()
