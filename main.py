@@ -4,6 +4,7 @@ import os
 import pandas as pd
 import time
 
+
 from calc.calculator import Calculator
 
 cwd = os.getcwd()  #Get folder
@@ -29,6 +30,7 @@ def process(files):
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
 
+
         if basename == "subtraction.csv":
             print("Processing Subtraction CSV")
             df = pd.read_csv(file)
@@ -45,6 +47,7 @@ def process(files):
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
 
+
         if basename == "multiplication.csv":
             print("multiply")
             df = pd.read_csv(file)
@@ -60,6 +63,7 @@ def process(files):
             df["result"] = results_arr
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
+
 
         if basename == "division.csv":
             print("division")
@@ -88,7 +92,9 @@ def process(files):
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
 
+
     return 0
+
 
 def main():
     path = pathlib.Path(__file__).parent / "inputs"
@@ -105,5 +111,6 @@ def main():
             print("Running...", end="\r")
 
         return True
+
 
 main()
