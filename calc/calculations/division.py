@@ -9,4 +9,4 @@ class Division(Calculation):
     """The division class has one method to get the result of the calculation"""
     def get_result(self):
         """Get the division result"""
-        return self.value1 / self.value2
+        return self.value_a / self.value_b

@@ -10,17 +10,16 @@
 #        """class method"""
 #        return cls(value_a, value_b)
 """Calculation Class"""
-from abc import ABC, abstractmethod
 
 class Calculation:
-    def __init__(self,value1, value2):
-        self.value1 = value1
-        self.value2 = value2
+    def __init__(self,value_a, value_b):
+        self.value_a = value_a
+        self.value_b = value_b
     #class factory method
     @classmethod
-    def create(cls, value1, value2):
-        return cls(value1,value2)
+    def create(cls, value_a, value_b):
+        return cls(value_a,value_b)
     @classmethod
     def print(cls, self):
-        print(self.value1)
-        print(self.value2)
+        print(self.value_a)
+        print(self.value_b)

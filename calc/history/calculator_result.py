@@ -42,36 +42,36 @@ class CalculatorResult:
         return CalculatorResult.history[num]
 
     @staticmethod
-    def add_calculation_to_history(num):
+    def add_calculation_to_history(calculation):
         """Add calculation to history"""
-        return CalculatorResult.history.append(num)
-#
-
-    def add_calculation(calculation):
-        """Get a generic calculation from history"""
         return CalculatorResult.history.append(calculation)
 
     @staticmethod
-    def add_addition_calculation_to_history(values):
+    def add_calculation(calculation):
+        """Get a calculation from history"""
+        return CalculatorResult.history.append(calculation)
+
+    @staticmethod
+    def add_addition_calculation_to_history(value_a, value_b):
         """Add addition calculation to history"""
-        CalculatorResult.add_calculation(Addition.create(values))
-        #Get the result of the calculation
+        CalculatorResult.add_calculation(Addition.create(value_a, value_b))
+        #Get calculation
         return True
 
     @staticmethod
-    def add_subtraction_calculation_to_history(values):
+    def add_subtraction_calculation_to_history(value_a, value_b):
         """Add subtraction calculation to history"""
-        CalculatorResult.add_calculation(Subtraction.create(values))
+        CalculatorResult.add_calculation(Subtraction.create(value_a, value_b))
         return True
 
     @staticmethod
-    def add_multiplication_calculation_to_history(values):
+    def add_multiplication_calculation_to_history(value_a, value_b):
         """Add multiplication calculation to history"""
-        CalculatorResult.add_calculation(Multiplication.create(values))
+        CalculatorResult.add_calculation(Multiplication.create(value_a, value_b))
         return True
 
     @staticmethod
-    def add_division_calculation_to_history(values):
+    def add_division_calculation_to_history(value_a, value_b):
         """Add division calculation to history"""
-        CalculatorResult.add_calculation(Division.create(values))
+        CalculatorResult.add_calculation(Division.create(value_a, value_b))
         return True
