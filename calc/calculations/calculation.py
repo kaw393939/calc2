@@ -12,31 +12,15 @@
 """Calculation Class"""
 from abc import ABC, abstractmethod
 
-class Calculation(ABC):
-    """Calculation abstract base class"""
-    def __init__(self,values: tuple):
-        """Constructor method"""
-        self.values = Calculation.convert_args_to_list_float(values)
-
-    @property
-    def values(self):
-        """Method for values"""
-        return self._values
-
-    @staticmethod
-    def convert_args_to_list_float(values):
-        """Convert values to floats"""
-        list_values_float = []
-        for item in values:
-            list_values_float.append(float(item))
-        return list_values_float
-
+class Calculation:
+    def __init__(self,value1, value2):
+        self.value1 = value1
+        self.value2 = value2
+    #class factory method
     @classmethod
-    def create(cls, values: tuple):
-        """Class method to create objects of operations"""
-        return cls(values)
-
-    @abstractmethod
-    def get_result(self):
-        """Creating this class to show overriding polymorphism"""
-        return True
+    def create(cls, value1, value2):
+        return cls(value1,value2)
+    @classmethod
+    def print(cls, self):
+        print(self.value1)
+        print(self.value2)

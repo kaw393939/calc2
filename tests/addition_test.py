@@ -1,9 +1,7 @@
-"""Test for addition"""
+"""Test Addition"""
 from calc.calculations.addition import Addition
 
-def test_static_calculation_addition(addition_file_fixture):
+def test_static_calculation_addition():
     """testing static method for addition"""
-    for index, row in addition_file_fixture.iterrows():
-        tuple_values = (row.value_1, row.value_2)
-        addition = Addition.create(tuple_values)
-        assert addition.get_result() == row.result
+    addition = Addition(2.0,3.0)
+    assert addition.get_result() == 5.0

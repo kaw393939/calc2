@@ -1,39 +1,49 @@
 """Testing the Calculator"""
 import pytest
-from calc.calculator import Calculator
+import pandas as pd
 
-def test_calculator_add_static(clear_history_fixture, addition_file_fixture):
+from calc.history.calculator_result import CalculatorResult
+from calc.calculations.division import Division
+from calc.calculations.addition import Addition
+from calc.calculations.multiplication import Multiplication
+from calc.calculations.subtraction import Subtraction
+from calc.utilities.absolutepath import absolutepath
+
+@pytest.fixture
+def clear_history_fixture():
+    """fixture to run tests"""
+    # pylint: disable=redefined-outer-name
+    CalculatorResult.clear_history()
+
+def test_calculator_add_static(clear_history_fixture):
     """testing that our calculator has a static method for addition"""
-    tuple_values = addition_file_fixture.value_1[5], addition_file_fixture.value_2[5]
-    Calculator.__add__(tuple_values)
-    assert Calculator.get_last_calculation_from_result() == addition_file_fixture['result'][5] \
-           and clear_history_fixture is True
+    csv_reader = pd.read_csv(absolutepath("tests/files/addition.csv"))
+    for index, row in csv_reader.iterrows():
+        addition = Addition.create(row.value1, row.value2)
+        addition_result = csv_reader["result"][index]
+        assert addition.get_result() == addition_result
 
-def test_calculator_subtract_static(clear_history_fixture, subtraction_file_fixture):
+def test_calculator_subtract_static(clear_history_fixture):
     """Testing the subtract method of the calc"""
-    tuple_values = subtraction_file_fixture.value_1[5], subtraction_file_fixture.value_2[5]
-    Calculator.__sub__(tuple_values)
-    assert Calculator.get_last_calculation_from_result() == subtraction_file_fixture['result'][5] \
-           and clear_history_fixture is True
+    csv_reader = pd.read_csv(absolutepath("tests/files/subtraction.csv"))
+    for index, row in csv_reader.iterrows():
+        subtraction = Subtraction.create(row.value1, row.value2)
+        subtraction_result = csv_reader["result"][index]
+        assert subtraction.get_result() == subtraction_result
 
-def test_calculator_multiply_static(clear_history_fixture, multiplication_file_fixture):
+def test_calculator_multiply_static(clear_history_fixture):
     """Testing the multiplication method of the calc"""
-    tuple_values = multiplication_file_fixture.value_1[5], multiplication_file_fixture.value_2[5]
-    Calculator.__mul__(tuple_values)
-    assert Calculator.get_last_calculation_from_result() == multiplication_file_fixture['result'][5] \
-           and clear_history_fixture is True
+    csv_reader = pd.read_csv(absolutepath("tests/files/multiplication.csv"))
+    for index, row in csv_reader.iterrows():
+        multiplication = Multiplication.create(row.value1, row.value2)
+        multiplication_result = csv_reader["result"][index]
+        assert multiplication.get_result() == multiplication_result
 
-def test_calculator_divide_static(clear_history_fixture, division_file_fixture):
+def test_calculator_divide_static(clear_history_fixture):
     """Testing the division method of the calc"""
-    tuple_values = division_file_fixture.value_1[5], division_file_fixture.value_2[5]
-    Calculator.__truediv__(tuple_values)
-    assert Calculator.get_last_calculation_from_result() == division_file_fixture['result'][5].round(decimals=5) \
-           and clear_history_fixture is True
+    csv_reader = pd.read_csv(absolutepath("tests/files/division.csv"))
+    for index, row in csv_reader.iterrows():
+        division = Division.create(row.value1, row.value2)
+        division_result = csv_reader["result"][index]
+        assert division.get_result() == division_result
 
-def test_calculator_divide_exception_static(clear_history_fixture, division_file_fixture):
-    """Testing the division method of the calc for the exception"""
-    tuple_values = division_file_fixture.value_1[2], division_file_fixture.value_2[0]
-    Calculator.__truediv__(tuple_values)
-    with pytest.raises(ZeroDivisionError):
-        assert Calculator.get_last_calculation_from_result() is True \
-               and clear_history_fixture is True

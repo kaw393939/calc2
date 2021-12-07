@@ -1,5 +1,4 @@
 """This class creates a calculator"""
-from calc.history.calculator_result import CalculatorResult
 from calc.calculations.addition import Addition
 from calc.calculations.subtraction import Subtraction
 from calc.calculations.multiplication import Multiplication
@@ -7,31 +6,53 @@ from calc.calculations.division import Division
 
 class Calculator:
     """This is the Calculator class"""
+    history = []
     @staticmethod
-    def get_last_calculation_from_result():
-        """Get last calculation"""
-        return CalculatorResult.get_last_calculation_result_value()
+    def get_result_of_first_calculation_added_to_history():
+        return Calculator.history[0].get_result()
 
     @staticmethod
-    def __add__(values: tuple):
-        """Add list of numbers"""
-        CalculatorResult.add_calculation_to_history(Addition.create(values))
+    def clear_history():
+        Calculator.history.clear()
         return True
 
     @staticmethod
-    def __sub__(values: tuple):
-        """Subtract list of numbers"""
-        CalculatorResult.add_calculation_to_history(Subtraction.create(values))
+    def history_count():
+        return len(Calculator.history)
+
+    @staticmethod
+    def add_calculation_to_history(calculation):
+        Calculator.history.append(calculation)
         return True
 
     @staticmethod
-    def __mul__(values: tuple):
-        """Multiply list of numbers"""
-        CalculatorResult.add_calculation_to_history(Multiplication.create(values))
-        return True
+    def get_result_of_last_calculation_added_to_history():
+        return Calculator.history[-1].get_result()
 
     @staticmethod
-    def __truediv__(values: tuple):
-        """Divide list of numbers"""
-        CalculatorResult.add_calculation_to_history(Division.create(values))
-        return True
+    def add_number(value1, value2):
+        """Adds number to result"""
+        addition = Addition.create(value1, value2)
+        Calculator.add_calculation_to_history(addition)
+        return Calculator.get_result_of_last_calculation_added_to_history()
+
+    @staticmethod
+    def subtract_number(value1, value2):
+        """"Subtract numbers and pass result"""
+        subtraction = Subtraction.create(value1, value2)
+        Calculator.add_calculation_to_history(subtraction)
+        return Calculator.get_result_of_last_calculation_added_to_history()
+
+    @staticmethod
+    def multiply_numbers(value1, value2):
+        """Multiply numbers and pass result"""
+        multiplication = Multiplication.create(value1, value2)
+        Calculator.add_calculation_to_history(multiplication)
+        return Calculator.get_result_of_last_calculation_added_to_history()
+
+    @staticmethod
+    def divide_numbers(value1, value2):
+        """Divide numbers and pass result"""
+        division = Division.create(value1, value2)
+        Calculator.add_calculation_to_history(division)
+        return Calculator.get_result_of_last_calculation_added_to_history()
