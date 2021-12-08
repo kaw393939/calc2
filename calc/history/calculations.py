@@ -5,6 +5,13 @@ from calc.calculations.multiplication import Multiplication
 class Calculations:
     """Calculations class manages the history of calculations"""
     history = []
+
+    @staticmethod
+    def readHistoryFromCSV():
+        """Read the history from csv and put it into the history """
+    @staticmethod
+    def writeHistoryToCSV():
+        """Write the history to csv file"""
     # pylint: disable=too-few-public-methods
     @staticmethod
     def clear_history():
