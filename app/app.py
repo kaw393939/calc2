@@ -10,7 +10,7 @@ app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 
 @app.route("/", methods=['GET'])
 def index_get():
-    return IndexController.geft()
+    return IndexController.get()
 
 @app.route("/calculator", methods=['GET'])
 def calculator_get():
