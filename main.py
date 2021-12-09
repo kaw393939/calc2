@@ -4,7 +4,6 @@ import os
 import pandas as pd
 import time
 
-
 from calc.calculator import Calculator
 
 cwd = os.getcwd()  #Get folder
@@ -16,7 +15,7 @@ def process(files):
         basename = os.path.basename(file)
 
         if basename == "addition.csv":
-            print("add")
+            print("Processing CSV Addition")
             df = pd.read_csv(file)
             results_arr = []
             for index, row in df.iterrows():
@@ -30,9 +29,8 @@ def process(files):
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
 
-
         if basename == "subtraction.csv":
-            print("Processing Subtraction CSV")
+            print("Processing CSV Subtraction")
             df = pd.read_csv(file)
             results_arr = []
             for index, row in df.iterrows():
@@ -47,9 +45,8 @@ def process(files):
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
 
-
         if basename == "multiplication.csv":
-            print("multiply")
+            print("Processing CSV Multiplication")
             df = pd.read_csv(file)
             results_arr = []
             for index, row in df.iterrows():
@@ -64,12 +61,11 @@ def process(files):
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
 
-
         if basename == "division.csv":
-            print("division")
+            print("Processing CSV Division")
             df = pd.read_csv(file)
             results_arr = []
-            # Loop
+            # Loop through records
             for index, row in df.iterrows():
                 #Division error
                 if row['value2'] == 0:
@@ -87,11 +83,10 @@ def process(files):
                         fp.close()
                     results_arr.append(temp)
 
-            #Create CSVs
+            #Create export CSVs
             df["result"] = results_arr
             with open(f"outputs/{basename}", "w") as fp:
                 df.to_csv(fp)
-
 
     return 0
 
@@ -111,6 +106,5 @@ def main():
             print("Running...", end="\r")
 
         return True
-
 
 main()
