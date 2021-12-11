@@ -1,13 +1,15 @@
 # Calculator Project Setup
 [![Build Status](https://app.travis-ci.com/ThulasiV21/calc2.svg?branch=main)](https://app.travis-ci.com/ThulasiV21/calc2)
 
-![image](static/1.png)
+![image](app/static/images/1.png)
 
-![image](static/2.png)
+![image](app/static/images/2.png)
 
-![image](static/3.png)
+![image](app/static/images/3.png)
 
-![image](static/4.png)
+![image](app/static/images/4.png)
+
+![image](app/static/images/5.png)
 
 Run Pip Install
 pip install -r requirements.txt
