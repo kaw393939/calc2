@@ -3,12 +3,6 @@ import pytest
 import pprint
 
 from calc.calculator import Calculator
-from calc.history.calculator_result import CalculatorResult
-from calc.calculations.division import Division
-from calc.calculations.addition import Addition
-from calc.calculations.multiplication import Multiplication
-from calc.calculations.subtraction import Subtraction
-from calc.utilities.absolutepath import absolutepath
 
 @pytest.fixture
 def clear_history():
