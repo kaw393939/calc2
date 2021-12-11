@@ -47,3 +47,8 @@ def solid_principles_get():
 @app.route("/pythonHome", methods=['GET'])
 def python_home_get():
     return PythonHomeController.get()
+
+
+if __name__ == '__main__':
+    app.run(use_debugger=False, use_reloader=False, passthrough_errors=True)
+    
