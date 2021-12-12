@@ -1,7 +1,7 @@
 # Calculator Project Setup
 [![Build Status](https://app.travis-ci.com/ThulasiV21/calc2.svg?branch=main)](https://app.travis-ci.com/ThulasiV21/calc2)
 
-![image](app/static/images/5.PNG)
+![image](app/static/images/6.PNG)
 
 ![image](app/static/images/1.PNG)
 
