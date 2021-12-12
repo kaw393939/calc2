@@ -1,11 +1,15 @@
 """Multiplication Class"""
 from calc.calculations.calculation import Calculation
 
+"""Inherits value value1,value2 from calculation"""
+
+
 class Multiplication(Calculation):
-    """subtraction calculation object"""
+    """multiplication calculation object"""
+
     def get_result(self):
         """get the multiplication results"""
-        result = 1.0
+        multiplication_values = 1.0
         for value in self.values:
-            result = result * value
-        return result
+            multiplication_values *= value
+        return multiplication_values
