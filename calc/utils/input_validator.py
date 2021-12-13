@@ -2,8 +2,8 @@
 
 import re
 from flask import render_template, request, flash, redirect, url_for
-import logging
-logger = logging.getLogger(__name__)
+# import logging
+# logger = logging.getLogger(__name__)
 class InputValidator:
     """Input Validator class"""
     def __init__(self, input_value1, input_value2):
@@ -19,6 +19,7 @@ class InputValidator:
         return self._input_value2
 
     def validate(self):
+        """Method to check whether the user's input is numeric or not"""
         regex = '^[0-9]+$'
         value1_check = False
         value2_check = False
@@ -27,6 +28,6 @@ class InputValidator:
         if re.search(regex, self.input_value2):
             value2_check = True
         if not value1_check or not value2_check:
-            False
+            return False
         else:
             return self._input_value1, self._input_value2

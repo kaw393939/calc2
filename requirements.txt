@@ -4,7 +4,8 @@ pytest-cov
 pytest
 pycodestyle
 pytest-pylint
+openpyxl
+numpy
 pandas
 Flask
 uWSGI
-gunicorn

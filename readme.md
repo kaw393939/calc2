@@ -3,6 +3,8 @@
 
 ![image](app/static/images/6.PNG)
 
+![image](app/static/images/7.PNG)
+
 ![image](app/static/images/1.PNG)
 
 ![image](app/static/images/2.PNG)
