@@ -14,7 +14,6 @@ class Operation(Properties, Calculator):
 
     def __init__(self):
         super().__init__()
-        self.data_frame = pd.read_csv(path, index_col=False)
         self.logger = logging.getLogger(self.logger_name)
         self.operations = {"+": self.addition, "-": self.subtraction, "*": self.multiply_numbers,
                            "/": self.division_numbers}
@@ -38,6 +37,7 @@ class Operation(Properties, Calculator):
             if self.file_format in file:
                 print(f"Processing {file}")
                 path = os.path.join(self.input_folder, file)
+                self.data_frame = pd.read_csv(path, index_col=False)
                 self.data_frame.replace(to_replace=[np.nan, None], value=str(), inplace=True)
                 self.data_frame_copy = self.data_frame.copy()
                 list(map(lambda row: self.make_operation(row, file, self.data_frame.loc[row][1],
