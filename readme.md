@@ -1,1 +1,1 @@
-![Pytest Screenshot](../../Desktop/Recordings/pytest.png)
+![Image](../../Desktop/Recordings/pytest.png)
