@@ -79,8 +79,7 @@ def main(event):
 
 if __name__ == "__main__":
     print(
-        "Warning: Please Don`t Open the Csv  File`s While Running..! which are in Input Folder and Close the Csv "
-        "While before You run")
+        "Warning: Please Don`t Open the Csv  File`s While Running..! which are in Input Folder and Close the Csv While before You run")
     main('e')
     event_handler = LoggingEventHandler()
     observer = Observer()
