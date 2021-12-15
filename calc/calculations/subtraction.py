@@ -1,4 +1,3 @@
-
 """Subtraction Class"""
 
 from calc.calculations.calculation import Calculation
@@ -17,4 +16,4 @@ class Subtraction(Calculation):
                 difference_of_values = value
             else:
                 difference_of_values = difference_of_values - value
-        return 
+        return difference_of_values
