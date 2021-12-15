@@ -39,9 +39,10 @@ def test_calculator_divide_static(clear_history_fixture):
     Calculator.division_numbers(my_tuple)
     assert Calculator.get_last_result_value() == 6.0
 
-def test_calculator_divide_by_zero(self):
-        """Testing the divide method of the calculator when dividing by zero"""
-        my_tuple = (2.0,0.0,3.0)
-        with self.assertRaises(ZeroDivisionError):
-            Calculator.division_numbers(my_tuple)
+def test_calculator_divide_static(clear_history_fixture):
+    """Testing the division method of the calc"""
 
+    # pylint: disable=unused-argument,redefined-outer-name
+    tuple_values = (1.0, 2.0, 4.5)
+    Calculator.divide_numbers(tuple_values)
+    assert Calculator.get_last_calculation_from_result() == 0.11111
