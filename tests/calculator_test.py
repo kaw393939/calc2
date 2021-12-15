@@ -1,32 +1,16 @@
-"""Testing the Calculator"""
-from calculator.main import Calculator
+"""Testing the calculation class"""
 
-def test_calculator_result():
-    """testing calculator result is 0"""
-    calc = Calculator()
-    assert calc.result == 0
+from calc.calculations.calculation import Calculation
 
-def test_calculator_add():
-    """Testing the Add function of the calculator"""
-    #Arrange by instantiating the calc class
-    calc = Calculator()
-    #Act by calling the method to be tested
-    calc.add_number(4)
-    #Assert that the results are correct
-    assert calc.result == 4
+def test_convert_args_to_list_float():
+    """Testing the overridden method of super class"""
+    #Arrange
+    values = 1,2,3,4
+    #Act
+    numbers_tuple = Calculation.convert_args_to_list_float(values)
+    #Assert
+    assert numbers_tuple == [1.0,2.0,3.0,4.0]
 
-def test_calculator_get_result():
-    """Testing the Get result method of the calculator"""
-    calc = Calculator()
-    assert calc.get_result() == 0
-
-def test_calculator_subtract():
-    """Testing the subtract method of the calculator"""
-    calc = Calculator()
-    calc.subtract_number(1)
-    assert calc.get_result() == -1
-def test_calculator_multiply():
-    """ tests multiplication of two numbers"""
-    calc = Calculator()
-    result  = calc.multiply_numbers(1,2)
-    assert result == 2
+def test_get_result():
+    """Testing the overridden method of super class + abstract class and method"""
+    assert Calculation.get_result(self=None) is True
