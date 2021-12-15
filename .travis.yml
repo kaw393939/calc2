@@ -11,4 +11,6 @@ branches:
   only:
     - main
     - development
+    - part2
+    - part4
     - part5
