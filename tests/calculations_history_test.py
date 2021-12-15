@@ -22,33 +22,29 @@ def test_add_calculation_to_history(clear_history_fixture, setup_addition_calcul
     assert Calculations.count_history() == 1
 
 def test_clear_calculation_history(clear_history_fixture, setup_addition_calculation_fixture):
-    """testing clear history"""
+    """Testing clear history returns true for success"""
     # pylint: disable=unused-argument,redefined-outer-name,singleton-comparison
     assert Calculations.count_history() == 1
     Calculations.clear_history()
     assert Calculations.count_history() == 0
-    assert Calculations.clear_history() == True
+    assert Calculations.clear_history() is True
 
 def test_get_calculation(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing getting a specific calculation out of the history"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculations.get_calculation(0).get_result() == 3
 
-def test_get_calc_last_result_value(clear_history_fixture, setup_addition_calculation_fixture):
+def test_get_last_calculation_result(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculations.get_last_calculation_result_value() == 3
+    assert Calculations.get_last_calculation_result() == 3
 
-def test_get_calculation_first(clear_history_fixture, setup_addition_calculation_fixture):
+def test_get_first_calculation_result(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculations.get_first_calculation().get_result() == 3
-def test_history_count(clear_history_fixture, setup_addition_calculation_fixture):
-    """Testing getting the count of calculations from the history"""
-    # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculations.count_history() == 1
-def test_get_calc_last_result_object(clear_history_fixture, setup_addition_calculation_fixture):
+
+def test_count_of_history(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
-    #This test if it returns the last calculation as an object
-    assert isinstance(Calculations.get_last_calculation_object(), Addition)
+    assert Calculations.count_history() == 1
