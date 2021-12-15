@@ -7,4 +7,3 @@ class Addition(Calculation):
         """get the addition results"""
         # pylint dia
         return sum(self.values)
-    
