@@ -11,4 +11,5 @@ branches:
   only:
     - main
     - development
-    - csv_reading_refactoring
+    - part2
+    - part5
