@@ -3,13 +3,12 @@ from calc.calculations.calculation import Calculation
 
 class Division(Calculation):
     """Division calculation object"""
-
     def get_result(self):
-      try:
-        """ divide two numbers and store the result"""
-        result = 1.0
-        for value in self.values:
-            result = result / value
-        return result
-      except ZeroDivisionError:
-            print("Divide by Zero")
+        """get the division results"""
+        #initial_value = 1.0
+        for index, value in enumerate(self.values):
+            if index == 0:
+                division_value = value
+            else:
+                division_value = division_value / value
+        return round(division_value, 5)
