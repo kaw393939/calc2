@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% set active_page = "index" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="home-image">
+<div class="body-content">
+    <h1 class="pd-bottom pd-bottom-10 t-align-center h1-index">Welcome to my Final project</h1>
+<div class="page-section pd-bottom-10">
+    <div class="grid-left-index">
+        <p class="grid-img-index"><a href="https://project1-is601.web.app/oop" title="Object Oriented programming in Python"><img src="{{ url_for('static', filename='images/python2.png') }}" alt="Python programming image" class="grid-img width-350"></a></p>
+    </div>
+    <div class="grid-right">
+        <p class="grid-img-index"><a href="https://project1-is601.web.app/" target="_blank" title="Brief history of internet"><img src="{{ url_for('static', filename='images/image_briefhistory.jpg') }}" alt="Brief history of internet image" class="grid-img width-350"></a></p>
+    </div>
+</div>
+</div>
+<div class="divSection">
+    <p class="divBottomFontStyle-index pd-top-10">
+        <span><b>Click on</b></span> your choice of topic of interest to know more!!
+    </p>
+</div>
+</div>
+
+{% endblock %}
