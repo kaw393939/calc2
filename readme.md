@@ -7,17 +7,6 @@
 
 ![image](app/static/images/7.PNG)
 
-![image](app/static/images/1.PNG)
-
-![image](app/static/images/2.PNG)
-
-![image](app/static/images/3.PNG)
-
-![image](app/static/images/4.PNG)
-
-![image](app/static/images/5.PNG)
-
-
 
 Run Pip Install
 pip install -r requirements.txt
