@@ -1,6 +1,8 @@
 # Calculator Project Setup
 [![Build Status](https://app.travis-ci.com/imdp7/calc2.svg?branch=part5)](https://app.travis-ci.com/imdp7/calc2)
 
+![video](app/static/images/video.mp4)
+
 ![image](app/static/images/6.PNG)
 
 ![image](app/static/images/7.PNG)
